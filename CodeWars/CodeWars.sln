@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum Of Numbers", "Sum Of Nu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exes and Ohs", "Exes and Ohs\Exes and Ohs.csproj", "{BCE29100-9C11-42C7-9D26-9EBF16D0F1B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort The Odd", "Sort The Odd\Sort The Odd.csproj", "{64BC9FB9-0D2E-4275-8655-91A060C58B63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BCE29100-9C11-42C7-9D26-9EBF16D0F1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCE29100-9C11-42C7-9D26-9EBF16D0F1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCE29100-9C11-42C7-9D26-9EBF16D0F1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64BC9FB9-0D2E-4275-8655-91A060C58B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64BC9FB9-0D2E-4275-8655-91A060C58B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64BC9FB9-0D2E-4275-8655-91A060C58B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64BC9FB9-0D2E-4275-8655-91A060C58B63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
