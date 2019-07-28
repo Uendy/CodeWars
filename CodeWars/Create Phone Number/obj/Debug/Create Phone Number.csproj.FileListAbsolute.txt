@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Create Phone Number\bin\Debug\Create Phone Number.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Create Phone Number\bin\Debug\Create Phone Number.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Create Phone Number\bin\Debug\Create Phone Number.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Create Phone Number\obj\Debug\Create Phone Number.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Create Phone Number\obj\Debug\Create Phone Number.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Create Phone Number\obj\Debug\Create Phone Number.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Create Phone Number\obj\Debug\Create Phone Number.pdb
