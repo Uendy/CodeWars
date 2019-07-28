@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Sum Of Numbers\bin\Debug\Sum Of Numbers.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Sum Of Numbers\bin\Debug\Sum Of Numbers.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Sum Of Numbers\bin\Debug\Sum Of Numbers.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Sum Of Numbers\obj\Debug\Sum Of Numbers.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Sum Of Numbers\obj\Debug\Sum Of Numbers.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Sum Of Numbers\obj\Debug\Sum Of Numbers.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\Sum Of Numbers\obj\Debug\Sum Of Numbers.pdb
