@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Exes and Ohs\bin\Debug\Exes and Ohs.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Exes and Ohs\bin\Debug\Exes and Ohs.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Exes and Ohs\bin\Debug\Exes and Ohs.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Exes and Ohs\obj\Debug\Exes and Ohs.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Exes and Ohs\obj\Debug\Exes and Ohs.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Exes and Ohs\obj\Debug\Exes and Ohs.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Exes and Ohs\obj\Debug\Exes and Ohs.pdb
