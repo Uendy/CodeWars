@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Simple Pig Latin\bin\Debug\Simple Pig Latin.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Simple Pig Latin\bin\Debug\Simple Pig Latin.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Simple Pig Latin\bin\Debug\Simple Pig Latin.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Simple Pig Latin\obj\Debug\Simple Pig Latin.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Simple Pig Latin\obj\Debug\Simple Pig Latin.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Simple Pig Latin\obj\Debug\Simple Pig Latin.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Simple Pig Latin\obj\Debug\Simple Pig Latin.pdb

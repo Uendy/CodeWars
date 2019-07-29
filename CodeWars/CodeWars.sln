@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stop gninnipS My sdroW", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Pig Latin", "Simple Pig Latin\Simple Pig Latin.csproj", "{0792A699-C4DE-4AB9-B04E-1465C04FF2C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unique in Order", "Unique in Order\Unique in Order.csproj", "{30809D3C-8F8F-42B2-8C04-CCC9AB718150}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0792A699-C4DE-4AB9-B04E-1465C04FF2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0792A699-C4DE-4AB9-B04E-1465C04FF2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0792A699-C4DE-4AB9-B04E-1465C04FF2C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30809D3C-8F8F-42B2-8C04-CCC9AB718150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30809D3C-8F8F-42B2-8C04-CCC9AB718150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30809D3C-8F8F-42B2-8C04-CCC9AB718150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30809D3C-8F8F-42B2-8C04-CCC9AB718150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
