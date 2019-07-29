@@ -31,5 +31,8 @@ public static class Kata
 
         var outPut = string.Join(" ", outPutArray);
         Console.WriteLine(outPut.TrimStart());
+
+        //most clever solution:
+        //return string.Join(" ", words.Split().OrderBy(w => w.SingleOrDefault(char.IsDigit)));
     }
 }
