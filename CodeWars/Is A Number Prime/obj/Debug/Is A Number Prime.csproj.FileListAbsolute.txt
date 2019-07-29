@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Is A Number Prime\obj\Debug\Is A Number Prime.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Is A Number Prime\obj\Debug\Is A Number Prime.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Is A Number Prime\bin\Debug\Is A Number Prime.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Is A Number Prime\bin\Debug\Is A Number Prime.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Is A Number Prime\bin\Debug\Is A Number Prime.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Is A Number Prime\obj\Debug\Is A Number Prime.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Is A Number Prime\obj\Debug\Is A Number Prime.pdb
