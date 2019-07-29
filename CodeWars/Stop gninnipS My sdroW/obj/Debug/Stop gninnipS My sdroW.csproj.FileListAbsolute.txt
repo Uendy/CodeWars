@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Stop gninnipS My sdroW\bin\Debug\Stop gninnipS My sdroW.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Stop gninnipS My sdroW\bin\Debug\Stop gninnipS My sdroW.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Stop gninnipS My sdroW\bin\Debug\Stop gninnipS My sdroW.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Stop gninnipS My sdroW\obj\Debug\Stop gninnipS My sdroW.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Stop gninnipS My sdroW\obj\Debug\Stop gninnipS My sdroW.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Stop gninnipS My sdroW\obj\Debug\Stop gninnipS My sdroW.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Stop gninnipS My sdroW\obj\Debug\Stop gninnipS My sdroW.pdb

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sort The Odd", "Sort The Od
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Is A Number Prime", "Is A Number Prime\Is A Number Prime.csproj", "{E8BE29A6-1F0C-47EC-91D7-2922CDD3748D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stop gninnipS My sdroW", "Stop gninnipS My sdroW\Stop gninnipS My sdroW.csproj", "{9D16262D-50CC-4D73-A67B-430EAA7822FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E8BE29A6-1F0C-47EC-91D7-2922CDD3748D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8BE29A6-1F0C-47EC-91D7-2922CDD3748D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8BE29A6-1F0C-47EC-91D7-2922CDD3748D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D16262D-50CC-4D73-A67B-430EAA7822FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D16262D-50CC-4D73-A67B-430EAA7822FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D16262D-50CC-4D73-A67B-430EAA7822FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D16262D-50CC-4D73-A67B-430EAA7822FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
