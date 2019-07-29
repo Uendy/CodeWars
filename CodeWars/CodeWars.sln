@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Pig Latin", "Simple 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unique in Order", "Unique in Order\Unique in Order.csproj", "{30809D3C-8F8F-42B2-8C04-CCC9AB718150}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQ Test", "IQ Test\IQ Test.csproj", "{11972786-9A8C-40C3-A75A-80EBD74F439F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IP Validation", "IP Validation\IP Validation.csproj", "{B53361A7-54D6-4FA2-9A8E-624B5803F92D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{30809D3C-8F8F-42B2-8C04-CCC9AB718150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30809D3C-8F8F-42B2-8C04-CCC9AB718150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30809D3C-8F8F-42B2-8C04-CCC9AB718150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11972786-9A8C-40C3-A75A-80EBD74F439F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11972786-9A8C-40C3-A75A-80EBD74F439F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11972786-9A8C-40C3-A75A-80EBD74F439F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11972786-9A8C-40C3-A75A-80EBD74F439F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53361A7-54D6-4FA2-9A8E-624B5803F92D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53361A7-54D6-4FA2-9A8E-624B5803F92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53361A7-54D6-4FA2-9A8E-624B5803F92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53361A7-54D6-4FA2-9A8E-624B5803F92D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

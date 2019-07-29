@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11972786-9A8C-40C3-A75A-80EBD74F439F}</ProjectGuid>
+    <ProjectGuid>{B53361A7-54D6-4FA2-9A8E-624B5803F92D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>IQ_Test</RootNamespace>
-    <AssemblyName>IQ Test</AssemblyName>
+    <RootNamespace>IP_Validation</RootNamespace>
+    <AssemblyName>IP Validation</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

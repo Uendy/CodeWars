@@ -20,17 +20,17 @@ public class Program
 
         var arrayOfNumber = numbers.Split(' ').Select(int.Parse).ToList();
 
-        var listOfEven = arrayOfNumber.Where(x => x % 2 == 0).ToList();
-        var listOfOdd = arrayOfNumber.Where(x => x % 2 != 0).ToList();
+        var even = arrayOfNumber.Where(x => x % 2 == 0).ToList();
+        var odd = arrayOfNumber.Where(x => x % 2 != 0).ToList();
 
-        if (listOfOdd.Count() == 1)
+        if (odd.Count() == 1)
         {
-            int index = arrayOfNumber.IndexOf(listOfOdd[0]) + 1;
+            int index = arrayOfNumber.IndexOf(odd[0]) + 1;
             Console.WriteLine(index);
         }
         else // in the even list
         {
-            int index = arrayOfNumber.IndexOf(listOfEven[0]) + 1;
+            int index = arrayOfNumber.IndexOf(even[0]) + 1;
             Console.WriteLine(index);
         }
 
