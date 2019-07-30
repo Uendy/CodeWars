@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\First Non-Repeating Char\obj\Debug\First Non-Repeating Char.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\First Non-Repeating Char\obj\Debug\First Non-Repeating Char.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\First Non-Repeating Char\bin\Debug\First Non-Repeating Char.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\First Non-Repeating Char\bin\Debug\First Non-Repeating Char.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\First Non-Repeating Char\bin\Debug\First Non-Repeating Char.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\First Non-Repeating Char\obj\Debug\First Non-Repeating Char.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\First Non-Repeating Char\obj\Debug\First Non-Repeating Char.pdb
