@@ -49,9 +49,7 @@ public class Program
                     catch (Exception)
                     {
                         charAndCount[(char)(charecter + ' ')]++;
-                        throw;
                     }
-                    throw;
                 }
             }
             else // new char
