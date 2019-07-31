@@ -79,5 +79,9 @@ public class Program
         }
 
         Environment.Exit(0);
+
+        //clever solution:
+        //var ret = s.GroupBy(z => char.ToLower(z)).Where(g => g.Count() == 1).FirstOrDefault();
+        //return (ret != null) ? ret.First().ToString() : string.Empty;
     }
 }
