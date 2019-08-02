@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Greed Is Good V2\bin\Debug\Greed Is Good V2.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Greed Is Good V2\bin\Debug\Greed Is Good V2.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Greed Is Good V2\bin\Debug\Greed Is Good V2.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Greed Is Good V2\obj\Debug\Greed Is Good V2.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Greed Is Good V2\obj\Debug\Greed Is Good V2.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Greed Is Good V2\obj\Debug\Greed Is Good V2.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Greed Is Good V2\obj\Debug\Greed Is Good V2.pdb

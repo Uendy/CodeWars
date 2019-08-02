@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "First Non-Repeating Char V2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greed Is Good", "Greed Is Good\Greed Is Good.csproj", "{FEE00A9D-AC39-4DB0-BD0F-5B562A9DEC39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greed Is Good V2", "Greed Is Good V2\Greed Is Good V2.csproj", "{F550CF2B-9F81-4E33-AC63-7B5BCB403FA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{FEE00A9D-AC39-4DB0-BD0F-5B562A9DEC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEE00A9D-AC39-4DB0-BD0F-5B562A9DEC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEE00A9D-AC39-4DB0-BD0F-5B562A9DEC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F550CF2B-9F81-4E33-AC63-7B5BCB403FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F550CF2B-9F81-4E33-AC63-7B5BCB403FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F550CF2B-9F81-4E33-AC63-7B5BCB403FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F550CF2B-9F81-4E33-AC63-7B5BCB403FA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

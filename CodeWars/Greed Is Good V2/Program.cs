@@ -35,40 +35,55 @@ public class Program
 
         var dice = input.Split(' ').Select(int.Parse).ToArray();
 
-        //change all 1's to 10's, easier to add the score later on
-        for (int index = 0; index < dice.Count(); index++)
+        var valuesAndOccurances = new Dictionary<int, int>(); // key == value, value == occurances
+        foreach (var die in dice)
         {
-            if (dice[index] == 1)
+            bool newValue = !valuesAndOccurances.ContainsKey(die);
+            if (newValue)
             {
-                dice[index] = 10;
+                valuesAndOccurances[die] = 1;
+            }
+            else //new value
+            {
+                valuesAndOccurances[die]++;
             }
         }
-
-        //create and populate the dice as list so they can be grouped by their value
-        var listOfDice = new List<Die>();
-
-        for (int index = 0; index < dice.Count(); index++)
-        {
-            var currentDie = new Die()
-            {
-                value = dice[index]
-            };
-
-            listOfDice.Add(currentDie);
-        }
-
-        var groups = listOfDice.GroupBy(Die => new { Die.value }).OrderByDescending(x => x.Count()).ToList();
 
         int score = 0;
 
-        bool quintuple = groups.Count() == 1;
-        if (quintuple)
+        var keys = valuesAndOccurances.Keys;
+
+        for (int index = 1; index <= 5; index++)
         {
-            bool onlyOnes = int.Parse(groups[0].Key.ToString()) == 10;
-            if (onlyOnes)
+            bool keyExists = valuesAndOccurances.ContainsKey(index);
+            if (keyExists)
             {
-                score += 1200;
+                bool overThreeOccurances = valuesAndOccurances[index] >= 3;
+                if (overThreeOccurances)
+                {
+                    if (index == 1)
+                    {
+                        score += 1000;
+                    }
+                    else
+                    {
+                        score += index * 100;
+                    }
+
+                    valuesAndOccurances[index] -= 3;
+                }
             }
         }
+
+        int numberOfOnesLeftOver = valuesAndOccurances[1];
+        int numberOfFivesLeftOver = valuesAndOccurances[5];
+
+        int bonusFromOnes = numberOfOnesLeftOver * 1000;
+        int bonusFromFives = numberOfFivesLeftOver * 50;
+
+        score += bonusFromOnes;
+        score += bonusFromFives;
+
+        Console.WriteLine(score);
     }
 }
