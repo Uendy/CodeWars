@@ -28,9 +28,6 @@ public class Program
         // 1 1 1 3 1   1000 + 100 = 1100
         // 2 4 4 5 4   400 + 50 = 450
 
-        //ToDo: try a class dice and print 5 objects;
-        //TODO: Learn Group By and Sort
-
         string input = Console.ReadLine();
 
         var dice = input.Split(' ').Select(int.Parse).ToArray();
@@ -75,14 +72,21 @@ public class Program
             }
         }
 
-        int numberOfOnesLeftOver = valuesAndOccurances[1];
-        int numberOfFivesLeftOver = valuesAndOccurances[5];
+        bool containsOne = valuesAndOccurances.ContainsKey(1);
+        if (containsOne)
+        {
+            int numberOfOnesLeftOver = valuesAndOccurances[1];
+            int bonusFromOnes = numberOfOnesLeftOver * 100;
+            score += bonusFromOnes;
+        }
 
-        int bonusFromOnes = numberOfOnesLeftOver * 1000;
-        int bonusFromFives = numberOfFivesLeftOver * 50;
-
-        score += bonusFromOnes;
-        score += bonusFromFives;
+        bool containsFive = valuesAndOccurances.ContainsKey(5);
+        if (containsFive)
+        {
+            int numberOfFivesLeftOver = valuesAndOccurances[5];
+            int bonusFromFives = numberOfFivesLeftOver * 50;
+            score += bonusFromFives;
+        }
 
         Console.WriteLine(score);
     }
