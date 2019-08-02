@@ -1,24 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 public class Program
 {
     public static void Main()
-     {
-        //ToDo: try a class dice and print 5 objects;
-
-        string input = Console.ReadLine();
-
-        var dice = input.Split(' ').Select(int.Parse).ToArray();
-
-        int score = 0;
-
-        dice = dice.OrderBy(x => x).ToArray();
-
-        var grouped = dice.Select(x => x == x).ToList();
-
-
-
-        //Greed is a dice game played with five six - sided dice.
+    {
+        //Greed is a dice game played with five six - sided dice./
         //Your mission, should you choose to accept it, is to score a throw according to these rules.
         //You will always be given an array with five six-sided dice values.
 
@@ -33,12 +20,35 @@ public class Program
         //A single die can only be counted once in each roll. 
         //For example, a "5" can only count as part of a triplet(contributing to the 500 points) or as a single 50 points,
         //but not both in the same roll.
-        
+
         //Example scoring
         // Throw Score
         // ---------------------------
         // 5 1 3 4 1   50 + 2 * 100 = 250
         // 1 1 1 3 1   1000 + 100 = 1100
         // 2 4 4 5 4   400 + 50 = 450
+
+        //ToDo: try a class dice and print 5 objects;
+        //TODO: Learn Group By and Sort
+
+        string input = Console.ReadLine();
+
+        var dice = input.Split(' ').Select(int.Parse).ToArray();
+
+        var listOfDice = new List<Die>();
+
+        for (int index = 0; index < dice.Count(); index++)
+        {
+            var currentDie = new Die()
+            {
+                value = dice[index]
+            };
+
+            listOfDice.Add(currentDie);
+        }
+
+        int score = 0;
+
+        var groups = listOfDice.GroupBy(x => new { x.value }).OrderByDescending(x => x.Count()).ToList();
     }
 }
