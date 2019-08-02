@@ -32,62 +32,94 @@ public class Program
 
         var dice = input.Split(' ').Select(int.Parse).ToArray();
 
-        var valuesAndOccurances = new Dictionary<int, int>(); // key == value, value == occurances
+        var sideAndOccurance = new Dictionary<int, int>(); // key == value, value == occurances
         foreach (var die in dice)
         {
-            bool newValue = !valuesAndOccurances.ContainsKey(die);
+            bool newValue = !sideAndOccurance.ContainsKey(die);
             if (newValue)
             {
-                valuesAndOccurances[die] = 1;
+                sideAndOccurance[die] = 1;
             }
             else //new value
             {
-                valuesAndOccurances[die]++;
+                sideAndOccurance[die]++;
             }
         }
 
         int score = 0;
 
-        var keys = valuesAndOccurances.Keys;
+        var keys = sideAndOccurance.Keys;
 
-        for (int index = 1; index <= 5; index++)
+        for (int dieSides = 1; dieSides <= 6; dieSides++)
         {
-            bool keyExists = valuesAndOccurances.ContainsKey(index);
+            bool keyExists = sideAndOccurance.ContainsKey(dieSides);
             if (keyExists)
             {
-                bool overThreeOccurances = valuesAndOccurances[index] >= 3;
+                bool overThreeOccurances = sideAndOccurance[dieSides] >= 3;
                 if (overThreeOccurances)
                 {
-                    if (index == 1)
+                    if (dieSides == 1)
                     {
                         score += 1000;
                     }
                     else
                     {
-                        score += index * 100;
+                        score += dieSides * 100;
                     }
 
-                    valuesAndOccurances[index] -= 3;
+                    sideAndOccurance[dieSides] -= 3;
                 }
             }
         }
 
-        bool containsOne = valuesAndOccurances.ContainsKey(1);
+        bool containsOne = sideAndOccurance.ContainsKey(1);
         if (containsOne)
         {
-            int numberOfOnesLeftOver = valuesAndOccurances[1];
+            int numberOfOnesLeftOver = sideAndOccurance[1];
             int bonusFromOnes = numberOfOnesLeftOver * 100;
             score += bonusFromOnes;
         }
 
-        bool containsFive = valuesAndOccurances.ContainsKey(5);
+        bool containsFive = sideAndOccurance.ContainsKey(5);
         if (containsFive)
         {
-            int numberOfFivesLeftOver = valuesAndOccurances[5];
+            int numberOfFivesLeftOver = sideAndOccurance[5];
             int bonusFromFives = numberOfFivesLeftOver * 50;
             score += bonusFromFives;
         }
 
         Console.WriteLine(score);
+
+        //clever solution:
+        //private static int[] _threes = new int[] { 0, 1000, 200, 300, 400, 500, 600 };
+        //private static int[] _singles = new int[] { 0, 100, 0, 0, 0, 50, 0 };
+        //public static int Score(int[] dice)
+        //{
+        //    return dice
+        //        .GroupBy(d => d)
+        //        .Select(gr => new { num = gr.Key, count = gr.Count() })
+        //        .Sum(n => (n.count / 3) * _threes[n.num] + (n.count % 3) * _singles[n.num]);
+        //}
+
+        //The way I wanted to do it: (by grouping them)
+        //public static int Score(int[] dice) 
+        //{
+        //    return dice
+        //      .GroupBy(d => d)
+        //      .Select(g => Points(g.Key, g.Count()))
+        //      .Sum();
+        //}
+        //
+        //private static int Points(int die, int count)
+        //{
+        //    switch (die)
+        //    {
+        //        case 1:
+        //            return (count / 3) * 1000 + (count % 3) * 100;
+        //        case 5:
+        //            return (count / 3) * 500 + (count % 3) * 50;
+        //        default:
+        //            return (count / 3) * die * 100;
+        //    }
     }
 }
