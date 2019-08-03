@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Count The Smiley Faces\bin\Debug\Count The Smiley Faces.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Count The Smiley Faces\bin\Debug\Count The Smiley Faces.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Count The Smiley Faces\bin\Debug\Count The Smiley Faces.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Count The Smiley Faces\obj\Debug\Count The Smiley Faces.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Count The Smiley Faces\obj\Debug\Count The Smiley Faces.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Count The Smiley Faces\obj\Debug\Count The Smiley Faces.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Count The Smiley Faces\obj\Debug\Count The Smiley Faces.pdb
