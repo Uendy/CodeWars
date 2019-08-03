@@ -87,12 +87,14 @@ public class Program
         outPut = outPut.Trim(charsToTrim);
 
         int indexOfLastComma = outPut.LastIndexOf(",");
+        if (indexOfLastComma != -1)
+        {
+            var newSB = new StringBuilder(outPut);
+            newSB[indexOfLastComma] = ' ';
 
-        var newSB = new StringBuilder(outPut);
-        newSB[indexOfLastComma] = ' ';
-
-        outPut = newSB.ToString();
-        outPut = outPut.Insert(indexOfLastComma + 1, "and");
+            outPut = newSB.ToString();
+            outPut = outPut.Insert(indexOfLastComma + 1, "and");
+        }
 
         Console.WriteLine(outPut);
     }

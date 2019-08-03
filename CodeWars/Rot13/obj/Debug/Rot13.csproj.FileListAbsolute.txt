@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Rot13\bin\Debug\Rot13.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Rot13\bin\Debug\Rot13.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Rot13\bin\Debug\Rot13.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Rot13\obj\Debug\Rot13.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Rot13\obj\Debug\Rot13.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Rot13\obj\Debug\Rot13.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Rot13\obj\Debug\Rot13.pdb
