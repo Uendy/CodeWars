@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greed Is Good V2", "Greed I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Count The Smiley Faces", "Count The Smiley Faces\Count The Smiley Faces.csproj", "{EFE627FF-5A42-4728-88DF-352EC5286E1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Human Readable Duration Format", "Human Readable Duration Format\Human Readable Duration Format.csproj", "{4CD68559-3939-4406-B680-A0D693E16FBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{EFE627FF-5A42-4728-88DF-352EC5286E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFE627FF-5A42-4728-88DF-352EC5286E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFE627FF-5A42-4728-88DF-352EC5286E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CD68559-3939-4406-B680-A0D693E16FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CD68559-3939-4406-B680-A0D693E16FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CD68559-3939-4406-B680-A0D693E16FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CD68559-3939-4406-B680-A0D693E16FBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

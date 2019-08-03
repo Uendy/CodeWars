@@ -57,5 +57,14 @@ public class Program
 
         //Regex Solution:
         // return smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
+
+        //Clever Solution:
+        //int count = 0;
+        //foreach (string smiley in smileys)
+        //{
+        //    if (((smiley.Contains(':') || smiley.Contains(';'))) && ((smiley.Contains(')') || smiley.Contains('D'))) && !smiley.Contains(' '))
+        //        count++;
+        //}
+
     }
 }
