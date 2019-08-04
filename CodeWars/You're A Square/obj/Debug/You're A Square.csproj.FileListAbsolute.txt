@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\You're A Square\bin\Debug\You're A Square.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\You're A Square\bin\Debug\You're A Square.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\You're A Square\bin\Debug\You're A Square.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\You're A Square\obj\Debug\You're A Square.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\You're A Square\obj\Debug\You're A Square.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\You're A Square\obj\Debug\You're A Square.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\You're A Square\obj\Debug\You're A Square.pdb
