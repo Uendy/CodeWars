@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Simple fraction to mixed number converter\bin\Debug\Simple fraction to mixed number converter.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Simple fraction to mixed number converter\bin\Debug\Simple fraction to mixed number converter.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Simple fraction to mixed number converter\bin\Debug\Simple fraction to mixed number converter.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Simple fraction to mixed number converter\obj\Debug\Simple fraction to mixed number converter.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Simple fraction to mixed number converter\obj\Debug\Simple fraction to mixed number converter.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Simple fraction to mixed number converter\obj\Debug\Simple fraction to mixed number converter.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Simple fraction to mixed number converter\obj\Debug\Simple fraction to mixed number converter.pdb
