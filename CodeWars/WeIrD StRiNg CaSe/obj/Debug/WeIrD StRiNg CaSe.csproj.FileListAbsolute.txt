@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\WeIrD StRiNg CaSe\bin\Debug\WeIrD StRiNg CaSe.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\WeIrD StRiNg CaSe\bin\Debug\WeIrD StRiNg CaSe.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\WeIrD StRiNg CaSe\bin\Debug\WeIrD StRiNg CaSe.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\WeIrD StRiNg CaSe\obj\Debug\WeIrD StRiNg CaSe.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\WeIrD StRiNg CaSe\obj\Debug\WeIrD StRiNg CaSe.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\WeIrD StRiNg CaSe\obj\Debug\WeIrD StRiNg CaSe.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\WeIrD StRiNg CaSe\obj\Debug\WeIrD StRiNg CaSe.pdb

@@ -39,6 +39,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rot13", "Rot13\Rot13.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "You're A Square", "You're A Square\You're A Square.csproj", "{E06E50A4-C5A8-4080-9326-A080E07F6396}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeIrD StRiNg CaSe", "WeIrD StRiNg CaSe\WeIrD StRiNg CaSe.csproj", "{9EFDA6EA-20B6-4E12-8469-5CC4FDCB33C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Find the unknown digit", "Find the unknown digit\Find the unknown digit.csproj", "{103F5B2F-9E6A-4045-99F2-9F34157959AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,14 @@ Global
 		{E06E50A4-C5A8-4080-9326-A080E07F6396}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E06E50A4-C5A8-4080-9326-A080E07F6396}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E06E50A4-C5A8-4080-9326-A080E07F6396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EFDA6EA-20B6-4E12-8469-5CC4FDCB33C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EFDA6EA-20B6-4E12-8469-5CC4FDCB33C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EFDA6EA-20B6-4E12-8469-5CC4FDCB33C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EFDA6EA-20B6-4E12-8469-5CC4FDCB33C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{103F5B2F-9E6A-4045-99F2-9F34157959AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103F5B2F-9E6A-4045-99F2-9F34157959AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103F5B2F-9E6A-4045-99F2-9F34157959AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103F5B2F-9E6A-4045-99F2-9F34157959AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

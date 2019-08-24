@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Find the unknown digit\bin\Debug\Find the unknown digit.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Find the unknown digit\bin\Debug\Find the unknown digit.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Find the unknown digit\bin\Debug\Find the unknown digit.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Find the unknown digit\obj\Debug\Find the unknown digit.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Find the unknown digit\obj\Debug\Find the unknown digit.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Find the unknown digit\obj\Debug\Find the unknown digit.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars\Find the unknown digit\obj\Debug\Find the unknown digit.pdb
