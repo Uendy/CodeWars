@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple fraction to mixed nu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Large Factorials", "Large Factorials\Large Factorials.csproj", "{EA3A0A62-6724-411E-92DB-EED8AB0FD35D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Growth of Population", "Growth of Population\Growth of Population.csproj", "{4FEFA796-4082-427A-A84B-E1C4D9E69675}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EA3A0A62-6724-411E-92DB-EED8AB0FD35D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA3A0A62-6724-411E-92DB-EED8AB0FD35D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA3A0A62-6724-411E-92DB-EED8AB0FD35D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FEFA796-4082-427A-A84B-E1C4D9E69675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEFA796-4082-427A-A84B-E1C4D9E69675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEFA796-4082-427A-A84B-E1C4D9E69675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEFA796-4082-427A-A84B-E1C4D9E69675}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
