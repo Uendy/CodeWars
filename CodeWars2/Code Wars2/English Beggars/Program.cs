@@ -19,7 +19,15 @@ public class Program
         var values = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray(); // money each time
         int n = int.Parse(Console.ReadLine()); // number of beggars
 
-        var outPut = CalculateGains(values, n);
+        var outPutArray = CalculateGains(values, n);
+        string outPutString = string.Join(" ", outPutArray);
+        Console.WriteLine(outPutString);
+
+        //if (n == 0) return new int[0];
+        //int[] res = new int[n];
+        //for (int i = 0, len = values.Length; i < len; i++)
+        //    res[i % n] += values[i];
+        //return res;
     }
 
     public static int[] CalculateGains(int[] values, int n)
@@ -35,7 +43,7 @@ public class Program
 
         for (int index = 0; index < listOfValues.Count(); index++)
         {
-            int currentHobo = n % index + 1;
+            int currentHobo = index % n;
             int currentAmount = listOfValues[index];
 
             a[currentHobo] += currentAmount;

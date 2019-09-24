@@ -4,3 +4,4 @@ C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code W
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\English Beggars\obj\Debug\English Beggars.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\English Beggars\obj\Debug\English Beggars.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\English Beggars\obj\Debug\English Beggars.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\English Beggars\obj\Debug\English Beggars.csprojAssemblyReference.cache
