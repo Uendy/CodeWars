@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 public class Program
 {
@@ -25,12 +24,19 @@ public class Program
 
     public static int[] CalculateGains(int[] values, int n)
     {
+        var listOfValues = values.ToList();
+
+        while (listOfValues.Count() % n != 0)
+        {
+            listOfValues.Add(0);
+        }
+
         int[] a = new int[n]; // a == answers, money for each
 
-        for (int index = 0; index < values.Length; index++)
+        for (int index = 0; index < listOfValues.Count(); index++)
         {
-            int currentHobo = n % index;
-            int currentAmount = values[index];
+            int currentHobo = n % index + 1;
+            int currentAmount = listOfValues[index];
 
             a[currentHobo] += currentAmount;
         }
