@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "English Beggars", "English 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Not Very Secure", "Not Very Secure\Not Very Secure.csproj", "{625CDD05-BE51-491D-A9B9-B480D37446FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Highest Rank Num in Array", "Highest Rank Num in Array\Highest Rank Num in Array.csproj", "{FA61CB98-D91B-44BF-94AC-B08A82446416}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{625CDD05-BE51-491D-A9B9-B480D37446FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{625CDD05-BE51-491D-A9B9-B480D37446FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{625CDD05-BE51-491D-A9B9-B480D37446FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA61CB98-D91B-44BF-94AC-B08A82446416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA61CB98-D91B-44BF-94AC-B08A82446416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA61CB98-D91B-44BF-94AC-B08A82446416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA61CB98-D91B-44BF-94AC-B08A82446416}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
