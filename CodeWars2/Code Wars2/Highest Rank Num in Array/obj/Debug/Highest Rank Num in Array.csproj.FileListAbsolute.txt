@@ -4,3 +4,4 @@ C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code W
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Highest Rank Num in Array\obj\Debug\Highest Rank Num in Array.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Highest Rank Num in Array\obj\Debug\Highest Rank Num in Array.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Highest Rank Num in Array\obj\Debug\Highest Rank Num in Array.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Highest Rank Num in Array\obj\Debug\Highest Rank Num in Array.csprojAssemblyReference.cache
