@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 public class Program
 {
@@ -70,12 +69,65 @@ public class Program
         {
             int currentFrameScore = 0;
 
-            var rolls = frames[i].ToCharArray(); // get each bowl
+            var bowl = frames[i].ToCharArray(); // get each bowl
+
+            for (int roll = 0; roll < bowl.Count(); roll++)
+            {
+                bool isStrike = bowl[roll] == 'X';
+                if (isStrike)
+                {
+                    currentFrameScore += 10;
+                    bool doubleStrike = strike == true;
+                    if (doubleStrike)
+                    {
+                        currentFrameScore *= 2;
+                    }
+                    strike = true;
+                    continue;
+                }
+
+                bool isSpare = bowl[roll] == '/';
+                if (isSpare)
+                {
+                    currentFrameScore = 10;
+                    bool bonus = strike == true || spare == true;
+                    if (bonus)
+                    {
+                        currentFrameScore *= 2;
+                    }
+                    spare = true;
+                    continue;
+                }
+
+                int currentRoll = int.Parse(bowl[roll].ToString()); // get the current roll score
+
+                bool previoisStrike = strike == true; //checking and adding strike bonus
+                if (previoisStrike)
+                {
+                    currentRoll *= 2;
+                }
+
+                bool previoisSpare = spare == true && roll == 0; // checking and adding strike bonus only to first roll
+                if (previoisSpare)
+                {
+                    currentRoll *= 2;
+                }
+
+                currentFrameScore += currentRoll;
+
+                strike = false; // returning both to false as the bonus has been given
+                spare = false;
+            }
 
             score += currentFrameScore;
         }
+        bool aboveMax = score > 300;
+        if (aboveMax)
+        {
+            score = 300;
+        }
 
-        return 0;
+        return score;
 
     }
 }
