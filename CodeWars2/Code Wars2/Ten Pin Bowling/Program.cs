@@ -78,20 +78,18 @@ public class Program
                 bool isStrike = bowl[roll] == 'X';
                 if (isStrike)
                 {
-                    //currentFrameScore += 10;
                     carryOver += 10;
-                    bool multipleStrikes = strike == true;
-                    if (multipleStrikes)
-                    {
-                        carryOver += 10;
-                        //currentFrameScore *= 2;
-                        bool turkey = carryOver > 30; // 3 or more strikes
-                        if (turkey)
-                        {
-                            currentFrameScore += 30;
-                            carryOver -= 10;
-                        }
-                    }
+                    //bool multipleStrikes = strike == true;
+                    //if (multipleStrikes)
+                    //{
+                    //    carryOver += 10;
+                    //    bool turkey = carryOver > 30; // 3 or more strikes
+                    //    if (turkey)
+                    //    {
+                    //        currentFrameScore += 30;
+                    //        carryOver -= 10;
+                    //    }
+                    //}
                     strike = true;
                     continue;
                 }
@@ -117,8 +115,7 @@ public class Program
                     int bonus = currentRoll *= carryOver / 10;
                     currentFrameScore += bonus;
                     currentFrameScore += carryOver;
-                    carryOver = 0;
-                    //currentRoll *= 2;
+                    carryOver -= 10;
                 }
 
                 bool previoisSpare = spare == true && roll == 0; // checking and adding strike bonus only to first roll
