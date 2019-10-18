@@ -62,9 +62,7 @@ public class Program
 
         int score = 0;
 
-        bool strike = false;
-        bool spare = false;
-
+        int bonusTimes = 0; //acoutns for multiple strikes
         int carryOver = 0;
 
         for (int i = 0; i < frames.Count(); i++)
@@ -78,56 +76,28 @@ public class Program
                 bool isStrike = bowl[roll] == 'X';
                 if (isStrike)
                 {
-                    carryOver += 10;
-                    //bool multipleStrikes = strike == true;
-                    //if (multipleStrikes)
-                    //{
-                    //    carryOver += 10;
-                    //    bool turkey = carryOver > 30; // 3 or more strikes
-                    //    if (turkey)
-                    //    {
-                    //        currentFrameScore += 30;
-                    //        carryOver -= 10;
-                    //    }
-                    //}
-                    strike = true;
+                    currentFrameScore += 10;
+                    bonusTimes = 2;
                     continue;
                 }
 
                 bool isSpare = bowl[roll] == '/';
                 if (isSpare)
                 {
-                    currentFrameScore = 10;
-                    bool bonus = strike == true || spare == true;
-                    if (bonus)
-                    {
-                        currentFrameScore *= 2;
-                    }
-                    spare = true;
+                    currentFrameScore += 10;
+                    bonusTimes = 1;
                     continue;
                 }
 
                 int currentRoll = int.Parse(bowl[roll].ToString()); // get the current roll score
 
-                bool previoisStrike = strike == true; //checking and adding strike bonus
-                if (previoisStrike)
+                bool bonusOn = bonusTimes > 0;
+                if (bonusOn)
                 {
-                    int bonus = currentRoll *= carryOver / 10;
-                    currentFrameScore += bonus;
-                    currentFrameScore += carryOver;
-                    carryOver -= 10;
-                }
 
-                bool previoisSpare = spare == true && roll == 0; // checking and adding strike bonus only to first roll
-                if (previoisSpare)
-                {
-                    currentRoll *= 2;
                 }
 
                 currentFrameScore += currentRoll;
-
-                strike = false; // returning both to false as the bonus has been given
-                spare = false;
             }
 
             score += currentFrameScore;
