@@ -57,50 +57,29 @@ public class Program
 
     public static int CalculateScore(string input)
     {
-        //get the frames
-        var frames = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
-
         int score = 0;
 
-        int bonusTimes = 0; //acoutns for multiple strikes
-        int carryOver = 0;
+        //get each throw result indevidually
+        var throws = input.ToCharArray().Where(x => x != ' ').ToArray();
 
-        for (int i = 0; i < frames.Count(); i++)
+        //go backwards to forwards to get the bonus' without needing to look ahead, but collecting them on the way back
+        for (int index = throws.Count() - 1; index >= 0; index--)
         {
-            int currentFrameScore = 0;
+            var currentThrow = throws[index];
 
-            var bowl = frames[i].ToCharArray(); // get each bowl
+            int currentScore = 0;
 
-            for (int roll = 0; roll < bowl.Count(); roll++)
-            {
-                bool isStrike = bowl[roll] == 'X';
-                if (isStrike)
-                {
-                    currentFrameScore += 10;
-                    bonusTimes = 2;
-                    continue;
-                }
+            //when you are a strike or spare
+            bool isStrikeOrSpare = currentThrow == 'X' || currentThrow == '/';
 
-                bool isSpare = bowl[roll] == '/';
-                if (isSpare)
-                {
-                    currentFrameScore += 10;
-                    bonusTimes = 1;
-                    continue;
-                }
+            //when multiple bonus ones are coming
 
-                int currentRoll = int.Parse(bowl[roll].ToString()); // get the current roll score
+            //when a strike is index the next few
 
-                bool bonusOn = bonusTimes > 0;
-                if (bonusOn)
-                {
+            //when a spare is in the next few
 
-                }
-
-                currentFrameScore += currentRoll;
-            }
-
-            score += currentFrameScore;
+            //when no spares or strikes
+            score += currentScore;
         }
 
         return score;
