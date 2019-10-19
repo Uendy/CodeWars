@@ -62,70 +62,95 @@ public class Program
         //get each throw result indevidually
         var throws = input.ToCharArray().Where(x => x != ' ').Select(y => y.ToString()).ToArray();
 
-        //go backwards to forwards to get the bonus' without needing to look ahead, but collecting them on the way back
-        for (int index = throws.Count() - 1; index >= 0; index--)
+        //go forwards to add bonus when needed, but be careful if you get to the last 2 throws
+        for (int index = 0; index < throws.Count(); index++)
         {
             var currentThrow = throws[index];
 
-            //int currentScore = 0;
-
-            //when you are a strike or spare
-            bool isStrikeOrSpare = currentThrow == "X" || currentThrow == "/";
-            if (isStrikeOrSpare)
+            bool normalThrow = int.TryParse(currentThrow, out int points);
+            if (normalThrow)
             {
-                score += 10;
+                score += points;
                 continue;
             }
 
-            //when multiple bonus ones are coming
-            if (index > 1)
+            bool strike = currentThrow == "X";
+            if (strike)
             {
-                if ((throws[index - 1] == "X" || throws[index - 1] == "/") && (throws[index - 2] == "X" || throws[index - 2] == "/"))
-                {
-                    if (index > 2)
-                    {
-                        bool turkey = throws[index - 3] == "X" || throws[index - 3] == "/";
-                        if (turkey)
-                        {
-                            score += 30 + int.Parse(currentThrow);
-                            continue;
-                        }
-                    }
 
-                    score += 20 + int.Parse(currentThrow);
-                    continue;
-                }
             }
 
-            //when a strike is index the next 1 or 2 shots, add ten, then current and/or previous and next
-            if (index > 1)
+            bool spare = currentThrow == "/";
+            if (spare)
             {
-                if (throws[index - 1] == "X") // X current(5) 3 -> 10 + 5 + 3
-                {
-                    score += 10 + int.Parse(currentThrow) + int.Parse(throws[index + 1]);
-                    continue;
-                }
-                else if (throws[index - 2] == "X") //X 7 current(1) -> 10 + 7 + 1 
-                {
-                    score += 10 + +int.Parse(throws[index - 1]) + int.Parse(currentThrow);
-                    continue;
-                }
-            }
 
-            //when a spare is in the next shot, add ten to currentshot
-            if (index > 0)
-            {
-                if (throws[index - 1] == "/") // / 5 -> 10 + 5 
-                {
-                    score += 10 + int.Parse(currentThrow);
-                    continue;
-                }
             }
-
-            //when no spares or strikes
-            int currentScore = int.Parse(currentThrow);
-            score += currentScore;
         }
+
+        ////go backwards to forwards to get the bonus' without needing to look ahead, but collecting them on the way back
+        //for (int index = throws.Count() - 1; index >= 0; index--)
+        //{
+        //    var currentThrow = throws[index];
+
+        //    //int currentScore = 0;
+
+        //    //when you are a strike or spare
+        //    bool isStrikeOrSpare = currentThrow == "X" || currentThrow == "/";
+        //    if (isStrikeOrSpare)
+        //    {
+        //        score += 10;
+        //        continue;
+        //    }
+
+        //    //when multiple bonus ones are coming
+        //    if (index > 1)
+        //    {
+        //        if ((throws[index - 1] == "X" || throws[index - 1] == "/") && (throws[index - 2] == "X" || throws[index - 2] == "/"))
+        //        {
+        //            if (index > 2)
+        //            {
+        //                bool turkey = throws[index - 3] == "X" || throws[index - 3] == "/";
+        //                if (turkey)
+        //                {
+        //                    score += 30 + int.Parse(currentThrow);
+        //                    continue;
+        //                }
+        //            }
+
+        //            score += 20 + int.Parse(currentThrow);
+        //            continue;
+        //        }
+        //    }
+
+        //    //when a strike is index the next 1 or 2 shots, add ten, then current and/or previous and next
+        //    if (index > 1)
+        //    {
+        //        if (throws[index - 1] == "X") // X current(5) 3 -> 10 + 5 + 3
+        //        {
+        //            score += 10 + int.Parse(currentThrow) + int.Parse(throws[index + 1]);
+        //            continue;
+        //        }
+        //        else if (throws[index - 2] == "X") //X 7 current(1) -> 10 + 7 + 1 
+        //        {
+        //            score += 10 + +int.Parse(throws[index - 1]) + int.Parse(currentThrow);
+        //            continue;
+        //        }
+        //    }
+
+        //    //when a spare is in the next shot, add ten to currentshot
+        //    if (index > 0)
+        //    {
+        //        if (throws[index - 1] == "/") // / 5 -> 10 + 5 
+        //        {
+        //            score += 10 + int.Parse(currentThrow);
+        //            continue;
+        //        }
+        //    }
+
+        //    //when no spares or strikes
+        //    int currentScore = int.Parse(currentThrow);
+        //    score += currentScore;
+        //}
         return score;
     }
 }
