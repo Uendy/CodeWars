@@ -83,7 +83,23 @@ public class Program
             bool spare = currentThrow == "/";
             if (spare)
             {
-
+                bool notLast = index < throws.Count() - 1;
+                if (notLast)
+                {
+                    var nextThrow = throws[index + 1];
+                    if (nextThrow == "X") // score a strike the next one, +10 from spare and + 10 from strike, cant land  a spare as thats atleast 2 throws away
+                    {
+                        score += 20;
+                    }
+                    else // normal throws, 10 from spare + whatever you get from the next throw that isnt a special throw
+                    {
+                        score += 10 + int.Parse(nextThrow);
+                    }
+                }
+                else // last throw of game
+                {
+                    score += 10;
+                }
             }
         }
 
