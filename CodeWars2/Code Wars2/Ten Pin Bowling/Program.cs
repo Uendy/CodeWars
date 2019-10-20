@@ -49,9 +49,9 @@ public class Program
         //The first frame would be worth 15(10 + 5) and the second frame would be worth 9(5 + 4).
         #endregion
 
-        string input = Console.ReadLine();
+        string frames = Console.ReadLine();
 
-        int score = CalculateScore(input);
+        int score = CalculateScore(frames);
         Console.WriteLine(score);
     }
 
@@ -78,14 +78,71 @@ public class Program
             if (strike)
             {
                 // if there are more than 2 shots
-                if (index < throws.Count() - 1) 
+                if (index < throws.Count() - 2)
+                {
+                    var nextShot = throws[index + 1];
+                    var secondShot = throws[index + 2];
+
+                    bool turkey = nextShot == "X" && secondShot == "X"; // both are strikes -> 10 + 10 + 10
+                    if (turkey)
+                    {
+                        score += 30;
+                        continue;
+                    }
+
+                    bool anotherStrike = nextShot == "X" || secondShot == "X"; // atleast one is strike -> 10 + (10 + [1-9])
+                    if (anotherStrike)
+                    {
+                        // see which one is strike and add the other one
+                        if (nextShot == "X")
+                        {
+                            int secondShotPoints = int.Parse(secondShot);
+                            score += 20 + secondShotPoints;
+                        }
+                        else //secondShot == "X";
+                        {
+                            int nextShotPoints = int.Parse(nextShot);
+                            score += 20 + nextShotPoints;
+                        }
+                        continue;
+                    }
+
+                    bool secondIsSpare = secondShot == "/"; // strike, normal points, then spare -> 10 + [1-9] + 10-[1-9]
+                    if (secondIsSpare)
+                    {
+                        int nextShotPoints = int.Parse(nextShot);
+                        score += 20;
+                        continue;
+                    }
+
+                    // no spars or strike
+                    int firstShotPoints = int.Parse(nextShot);
+                    int lastShotPoints = int.Parse(secondShot);
+
+                    score += 10 + firstShotPoints + lastShotPoints;
+                    continue;
+                }
 
                 // if there is one more shot
+                if (index < throws.Count() - 1)
+                {
+                    var nextShot = throws[index + 1];
+                    if (nextShot == "X") // if strike
+                    {
+                        score += 20;
+                    }
+                    else // non strike, [1-9]
+                    {
+                        int nextPoints = int.Parse(nextShot);
+                        score += 10 + nextPoints;
+                    }
+                }
 
                 //if strke = the last shot
-
-
-                  
+                if (index == throws.Count() - 1)
+                {
+                    score += 10;
+                }
             }
 
             bool spare = currentThrow == "/";
@@ -110,71 +167,6 @@ public class Program
                 }
             }
         }
-
-        ////go backwards to forwards to get the bonus' without needing to look ahead, but collecting them on the way back
-        //for (int index = throws.Count() - 1; index >= 0; index--)
-        //{
-        //    var currentThrow = throws[index];
-
-        //    //int currentScore = 0;
-
-        //    //when you are a strike or spare
-        //    bool isStrikeOrSpare = currentThrow == "X" || currentThrow == "/";
-        //    if (isStrikeOrSpare)
-        //    {
-        //        score += 10;
-        //        continue;
-        //    }
-
-        //    //when multiple bonus ones are coming
-        //    if (index > 1)
-        //    {
-        //        if ((throws[index - 1] == "X" || throws[index - 1] == "/") && (throws[index - 2] == "X" || throws[index - 2] == "/"))
-        //        {
-        //            if (index > 2)
-        //            {
-        //                bool turkey = throws[index - 3] == "X" || throws[index - 3] == "/";
-        //                if (turkey)
-        //                {
-        //                    score += 30 + int.Parse(currentThrow);
-        //                    continue;
-        //                }
-        //            }
-
-        //            score += 20 + int.Parse(currentThrow);
-        //            continue;
-        //        }
-        //    }
-
-        //    //when a strike is index the next 1 or 2 shots, add ten, then current and/or previous and next
-        //    if (index > 1)
-        //    {
-        //        if (throws[index - 1] == "X") // X current(5) 3 -> 10 + 5 + 3
-        //        {
-        //            score += 10 + int.Parse(currentThrow) + int.Parse(throws[index + 1]);
-        //            continue;
-        //        }
-        //        else if (throws[index - 2] == "X") //X 7 current(1) -> 10 + 7 + 1 
-        //        {
-        //            score += 10 + +int.Parse(throws[index - 1]) + int.Parse(currentThrow);
-        //            continue;
-        //        }
-        //    }
-
-        //    //when a spare is in the next shot, add ten to currentshot
-        //    if (index > 0)
-        //    {
-        //        if (throws[index - 1] == "/") // / 5 -> 10 + 5 
-        //        {
-        //            score += 10 + int.Parse(currentThrow);
-        //            continue;
-        //        }
-        //    }
-
-        //    //when no spares or strikes
-        //    int currentScore = int.Parse(currentThrow);
-        //    score += currentScore;
-        //}
         return score;
     }
 }
