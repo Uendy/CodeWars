@@ -77,7 +77,15 @@ public class Program
             bool strike = currentThrow == "X";
             if (strike)
             {
+                // if there are more than 2 shots
+                if (index < throws.Count() - 1) 
 
+                // if there is one more shot
+
+                //if strke = the last shot
+
+
+                  
             }
 
             bool spare = currentThrow == "/";
