@@ -159,7 +159,14 @@ public class Program
                     }
                     else // normal throws, 10 from spare + whatever you get from the next throw that isnt a special throw
                     {
-                        score += 10 + int.Parse(nextThrow);
+                        if (index != throws.Count() - 2)
+                        {
+                            score += 10 + int.Parse(nextThrow);
+                        }
+                        else
+                        {
+                            score += 10; // as the last frame spare dosent give the bonus
+                        }
                     }
                 }
                 else // last throw of game
@@ -168,6 +175,26 @@ public class Program
                 }
             }
         }
+
+        //My score was off, because the last frame dosent count the spare and strike bonuses, so here I search for them and remove them
+        string lastFrame = input.Split(' ').Last().ToString();
+        
+        bool lastFrameTurkey = lastFrame == "XXX";
+        if (lastFrameTurkey)
+        {
+            score -= 30;
+            return score;
+        }
+
+        //check if the last frame starts with a strike, if it does, then take off the bonus for the next 2 shots by minusing them from the total
+        var lastFrameBowls = lastFrame.ToCharArray();
+        bool lastFrameStrike = lastFrameBowls[0] == 'X';
+        if (lastFrameStrike)
+        {
+
+        }
+
+
         return score;
     }
 }
