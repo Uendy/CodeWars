@@ -149,7 +149,7 @@ public class Program
             if (spare)
             {
                 score -= int.Parse(throws[index - 1]); // to ge tthe full ten point from the spare, - this points you got from the last throw;
-                bool notLast = index < throws.Count() - 1;
+                bool notLast = index < throws.Count() - 2;
                 if (notLast)
                 {
                     var nextThrow = throws[index + 1];
