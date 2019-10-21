@@ -110,7 +110,7 @@ public class Program
                     bool secondIsSpare = secondShot == "/"; // strike, normal points, then spare -> 10 + [1-9] + 10-[1-9]
                     if (secondIsSpare)
                     {
-                        int nextShotPoints = int.Parse(nextShot);
+                        //int nextShotPoints = int.Parse(nextShot);
                         score += 20;
                         continue;
                     }
@@ -148,6 +148,7 @@ public class Program
             bool spare = currentThrow == "/";
             if (spare)
             {
+                score -= int.Parse(throws[index - 1]); // to ge tthe full ten point from the spare, - this points you got from the last throw;
                 bool notLast = index < throws.Count() - 1;
                 if (notLast)
                 {
