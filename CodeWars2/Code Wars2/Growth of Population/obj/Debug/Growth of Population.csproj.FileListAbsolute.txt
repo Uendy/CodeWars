@@ -5,3 +5,5 @@ C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code W
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Growth of Population\obj\Debug\Growth of Population.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Growth of Population\obj\Debug\Growth of Population.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Growth of Population\obj\Debug\Growth of Population.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Growth of Population\bin\Debug\Growth of Population.exe.CodeAnalysisLog.xml
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Growth of Population\bin\Debug\Growth of Population.exe.lastcodeanalysissucceeded

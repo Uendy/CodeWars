@@ -1,7 +1,8 @@
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\bin\Debug\Sum odd Numbers.exe.config
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\bin\Debug\Sum odd Numbers.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\bin\Debug\Sum odd Numbers.pdb
-C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\obj\Debug\Sum odd Numbers.csprojAssemblyReference.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\obj\Debug\Sum odd Numbers.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\obj\Debug\Sum odd Numbers.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\obj\Debug\Sum odd Numbers.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\bin\Debug\Sum odd Numbers.exe.CodeAnalysisLog.xml
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Sum odd Numbers\bin\Debug\Sum odd Numbers.exe.lastcodeanalysissucceeded

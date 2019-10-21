@@ -55,12 +55,12 @@ public class Program
         Console.WriteLine(score);
     }
 
-    public static int CalculateScore(string input)
+    public static int CalculateScore(string frames)
     {
         int score = 0;
 
         //get each throw result indevidually
-        var throws = input.ToCharArray().Where(x => x != ' ').Select(y => y.ToString()).ToArray();
+        var throws = frames.ToCharArray().Where(x => x != ' ').Select(y => y.ToString()).ToArray();
 
         //go forwards to add bonus when needed, but be careful if you get to the last 2 throws
         for (int index = 0; index < throws.Count(); index++)
@@ -177,7 +177,7 @@ public class Program
         }
 
         //My score was off, because the last frame dosent count the spare and strike bonuses, so here I search for them and remove them
-        string lastFrame = input.Split(' ').Last().ToString();
+        string lastFrame = frames.Split(' ').Last().ToString();
         
         bool lastFrameTurkey = lastFrame == "XXX";
         if (lastFrameTurkey)
@@ -191,9 +191,42 @@ public class Program
         bool lastFrameStrike = lastFrameBowls[0] == 'X';
         if (lastFrameStrike)
         {
+            string penultimateThrow = lastFrameBowls[1].ToString();
+            string lastThrow = lastFrameBowls[2].ToString();
 
+            if (lastFrameBowls[1] == 'X' || lastFrameBowls[2] == 'X')
+            {
+                score -= 10;
+
+                // /X8 -> score -= 8
+                bool penultimateIsStrike = int.TryParse(penultimateThrow, out int penultimatePoints);
+                if (penultimateIsStrike)
+                {
+                    score -= penultimatePoints;
+                }
+                else
+                {
+                    int lastPoints = int.Parse(lastThrow);
+                    score -= lastPoints;
+                }
+            }
+            else // no more strikes, so subtract [1] and [2] from score
+            {
+                int lastPoints = int.Parse(lastThrow);
+                int penPoints = int.Parse(penultimateThrow);
+                score -= lastPoints;
+                score -= penPoints;
+            }
         }
 
+        //if the 2nd throw [1] == strike, then take away the last throw bonus score -= int.Parse([2])
+        bool secondIsStrike = lastFrameBowls[1] == 'X';
+        if (secondIsStrike)
+        {
+            int lastPoints = int.Parse(lastFrameBowls[2].ToString());
+            score -= lastPoints;
+            return score;
+        }
 
         return score;
     }

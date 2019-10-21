@@ -5,3 +5,5 @@ C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code W
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Large Factorials\obj\Debug\Large Factorials.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Large Factorials\obj\Debug\Large Factorials.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Large Factorials\obj\Debug\Large Factorials.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Large Factorials\bin\Debug\Large Factorials.exe.CodeAnalysisLog.xml
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Large Factorials\bin\Debug\Large Factorials.exe.lastcodeanalysissucceeded

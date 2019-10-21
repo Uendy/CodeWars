@@ -1,7 +1,8 @@
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\bin\Debug\Find the Odd Int.exe.config
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\bin\Debug\Find the Odd Int.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\bin\Debug\Find the Odd Int.pdb
-C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\obj\Debug\Find the Odd Int.csprojAssemblyReference.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\obj\Debug\Find the Odd Int.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\obj\Debug\Find the Odd Int.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\obj\Debug\Find the Odd Int.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\bin\Debug\Find the Odd Int.exe.CodeAnalysisLog.xml
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Find the Odd Int\bin\Debug\Find the Odd Int.exe.lastcodeanalysissucceeded

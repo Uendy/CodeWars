@@ -1,7 +1,8 @@
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\bin\Debug\Not Very Secure.exe.config
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\bin\Debug\Not Very Secure.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\bin\Debug\Not Very Secure.pdb
-C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\obj\Debug\Not Very Secure.csprojAssemblyReference.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\obj\Debug\Not Very Secure.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\obj\Debug\Not Very Secure.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\obj\Debug\Not Very Secure.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\bin\Debug\Not Very Secure.exe.CodeAnalysisLog.xml
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Not Very Secure\bin\Debug\Not Very Secure.exe.lastcodeanalysissucceeded

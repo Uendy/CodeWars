@@ -1,7 +1,8 @@
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\bin\Debug\Ten Green Bottles.exe.config
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\bin\Debug\Ten Green Bottles.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\bin\Debug\Ten Green Bottles.pdb
-C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\obj\Debug\Ten Green Bottles.csprojAssemblyReference.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\obj\Debug\Ten Green Bottles.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\obj\Debug\Ten Green Bottles.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\obj\Debug\Ten Green Bottles.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\bin\Debug\Ten Green Bottles.exe.CodeAnalysisLog.xml
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Green Bottles\bin\Debug\Ten Green Bottles.exe.lastcodeanalysissucceeded
