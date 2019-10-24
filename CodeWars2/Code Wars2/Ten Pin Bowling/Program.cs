@@ -49,18 +49,18 @@ public class Program
         //The first frame would be worth 15(10 + 5) and the second frame would be worth 9(5 + 4).
         #endregion
 
-        string frames = Console.ReadLine();
+        string input = Console.ReadLine();
 
-        int score = CalculateScore(frames);
+        int score = CalculateScore(input);
         Console.WriteLine(score);
     }
 
-    public static int CalculateScore(string frames)
+    public static int CalculateScore(string input)
     {
         int score = 0;
 
         //get each throw result indevidually
-        var throws = frames.ToCharArray().Where(x => x != ' ').Select(y => y.ToString()).ToArray();
+        var throws = input.ToCharArray().Where(x => x != ' ').Select(y => y.ToString()).ToArray();
 
         //go forwards to add bonus when needed, but be careful if you get to the last 2 throws
         for (int index = 0; index < throws.Count(); index++)
@@ -176,7 +176,7 @@ public class Program
         }
 
         //My score was off, because the last frame dosent count the spare and strike bonuses, so here I search for them and remove them
-        string lastFrame = frames.Split(' ').Last().ToString();
+        string lastFrame = input.Split(' ').Last().ToString();
         
         bool lastFrameTurkey = lastFrame == "XXX";
         if (lastFrameTurkey)
