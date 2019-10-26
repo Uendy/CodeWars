@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Pin Bowling\bin\Debug\Ten Pin Bowling.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Pin Bowling\bin\Debug\Ten Pin Bowling.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Pin Bowling\bin\Debug\Ten Pin Bowling.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Pin Bowling\obj\Debug\Ten Pin Bowling.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Pin Bowling\obj\Debug\Ten Pin Bowling.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Pin Bowling\obj\Debug\Ten Pin Bowling.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Ten Pin Bowling\obj\Debug\Ten Pin Bowling.csprojAssemblyReference.cache
