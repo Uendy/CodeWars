@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Mexican Wave\bin\Debug\Mexican Wave.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Mexican Wave\bin\Debug\Mexican Wave.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Mexican Wave\bin\Debug\Mexican Wave.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Mexican Wave\obj\Debug\Mexican Wave.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Mexican Wave\obj\Debug\Mexican Wave.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Mexican Wave\obj\Debug\Mexican Wave.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\Mexican Wave\obj\Debug\Mexican Wave.pdb

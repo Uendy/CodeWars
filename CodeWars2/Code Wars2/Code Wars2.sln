@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distinct Year", "Distinct Y
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiply All Elements", "Multiply All Elements\Multiply All Elements.csproj", "{2BA7E3C1-7645-4DDB-A36A-BAE291DC9E03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mexican Wave", "Mexican Wave\Mexican Wave.csproj", "{681BDD04-F3DE-4F2B-9A99-8FA5B8DF40C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{2BA7E3C1-7645-4DDB-A36A-BAE291DC9E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BA7E3C1-7645-4DDB-A36A-BAE291DC9E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BA7E3C1-7645-4DDB-A36A-BAE291DC9E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681BDD04-F3DE-4F2B-9A99-8FA5B8DF40C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681BDD04-F3DE-4F2B-9A99-8FA5B8DF40C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681BDD04-F3DE-4F2B-9A99-8FA5B8DF40C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681BDD04-F3DE-4F2B-9A99-8FA5B8DF40C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
