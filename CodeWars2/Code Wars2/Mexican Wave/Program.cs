@@ -15,32 +15,31 @@ public class Program
         //Example
         //wave("hello") => [] string{"Hello", "hEllo", "heLlo", "helLo", "hellO"}
 
-        string str = Console.ReadLine();
+        string input = Console.ReadLine();
 
-        var wave = MexicanWaveTheString(str);
+        var wave = MexicanWaveTheString(input);
 
         string outPut = string.Join(", ", wave);
         Console.WriteLine(outPut);
     }
 
-    public static List<string> MexicanWaveTheString(string str)
+    public static List<string> MexicanWaveTheString(string input)
     {
         var wave = new List<string>();
 
-        var stringAsArray = str.ToCharArray();
-        for (int index = 0; index < str.Length; index++)
+        var stringAsArray = input.ToCharArray();
+        for (int index = 0; index < input.Length; index++)
         {
-            if (stringAsArray[index] == ' ')
+            if (stringAsArray[index] == ' ')  // //2.If the character in the string is whitespace then pass over it as if it was an empty seat.
             {
                 continue;
             }
 
-            string capitalizedWave = string.Empty;
-            string beforeCapital = str.Substring(0, index);
+            string beforeCapital = input.Substring(0, index);
             string capital = stringAsArray[index].ToString().ToUpper();
-            string afterCapital = str.Substring(index + 1);
+            string afterCapital = input.Substring(index + 1);
 
-            capitalizedWave = string.Concat(beforeCapital, capital, afterCapital);
+            string capitalizedWave = string.Concat(beforeCapital, capital, afterCapital);
 
             wave.Add(capitalizedWave);
         }
