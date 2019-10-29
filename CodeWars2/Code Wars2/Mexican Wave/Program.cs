@@ -30,22 +30,17 @@ public class Program
         var stringAsArray = str.ToCharArray();
         for (int index = 0; index < str.Length; index++)
         {
+            if (stringAsArray[index] == ' ')
+            {
+                continue;
+            }
+
             string capitalizedWave = string.Empty;
-            if (index >= 1)
-            {
-                string beforeCapital = str.Substring(0, index);
-                string capital = stringAsArray[index].ToString().ToUpper();
-                string afterCapital = str.Substring(index + 1);
+            string beforeCapital = str.Substring(0, index);
+            string capital = stringAsArray[index].ToString().ToUpper();
+            string afterCapital = str.Substring(index + 1);
 
-                capitalizedWave = string.Concat(beforeCapital, capital, afterCapital);
-            }
-            else
-            {
-                string capital = stringAsArray[index].ToString().ToUpper();
-                string afterCapital = str.Substring(index + 1);
-
-                capitalizedWave = string.Concat(capital, afterCapital);
-            }
+            capitalizedWave = string.Concat(beforeCapital, capital, afterCapital);
 
             wave.Add(capitalizedWave);
         }
