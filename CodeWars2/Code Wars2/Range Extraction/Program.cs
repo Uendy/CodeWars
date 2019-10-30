@@ -55,10 +55,27 @@ public class Program
                     sb.Append($"{startNum}, {middleNum}, {innerNum}");
                     index = innerIndex; // so skip them
                 }
-                //while (isRange)
-                //{
+                else //is a range, see how long it continues;
+                {
+                    for (int rangeLength = innerIndex + 1; rangeLength < args.Length; rangeLength++)
+                    {
+                        int nextNum = args[rangeLength];
+                        isRange = nextNum - startNum == rangeLength;
+                        if (!isRange)
+                        {
+                            int lastNumInrange = args[rangeLength - 1];
+                            sb.Append($"{startNum}-{lastNumInrange}");
+                            break;
+                        }
 
-                //}
+                        if (rangeLength == args.Length - 1) // go to end so put all nums from startNum to nextNum in a range
+                        {
+                            sb.Append($"{startNum}-{nextNum}");
+                            return sb.ToString();
+                        }
+                    }
+                }
+                // would like to do this next step with recoursion
             }
         }
 
