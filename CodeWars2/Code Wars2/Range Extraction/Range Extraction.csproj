@@ -7,7 +7,7 @@
     <ProjectGuid>{A3A24A52-42A7-4B20-A4C1-0F6015A495F2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Range_Extraction</RootNamespace>
-    <AssemblyName>Range_Extraction</AssemblyName>
+    <AssemblyName>Range Extraction</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

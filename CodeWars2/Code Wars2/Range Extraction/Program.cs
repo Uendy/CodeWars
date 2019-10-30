@@ -18,5 +18,21 @@ public class Program
 
         //so all the ones that have more than 1 between them return as the same ex: -5, -2, 0 -> -5, -2, 0
         //all those that are subsequent insert into a range ex: -3, -2, -1, 0, 1 -> -3-1
+
+        string input = Console.ReadLine();
+        var args = input.Split(new[] { ", " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+
+        var solution = TruncateRange(args);
+
+        string output = string.Join(",", solution);
+        Console.WriteLine(output);
+    }
+
+    public static int[] TruncateRange(int[] args)
+    {
+        for (int index = 0; index < args.Length; index++)
+        {
+
+        }
     }
 }
