@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 public class Program
 {
@@ -24,15 +25,44 @@ public class Program
 
         var solution = TruncateRange(args);
 
-        string output = string.Join(",", solution);
-        Console.WriteLine(output);
+        Console.WriteLine(solution);
     }
 
-    public static int[] TruncateRange(int[] args)
+    public static string TruncateRange(int[] args)
     {
+        bool notRange = args.Length < 3; //it is not considered a range unless it spans at least 3 numbers.
+        if (notRange)
+        {
+            return string.Join(", ", args);
+        }
+
+        var sb = new StringBuilder();
+
         for (int index = 0; index < args.Length; index++)
         {
+            int startNum = args[index];
 
+            bool isRange = false;
+
+            for (int innerIndex = index + 2; innerIndex < args.Length; innerIndex++)
+            {
+                int innerNum = args[innerIndex];
+                isRange = innerNum - startNum == innerIndex;
+
+                if (!isRange)
+                {
+                    int middleNum = args[index + 1];
+                    sb.Append($"{startNum}, {middleNum}, {innerNum}");
+                    index = innerIndex; // so skip them
+                }
+                //while (isRange)
+                //{
+
+                //}
+            }
         }
+
+        string output = sb.ToString();
+        return output;
     }
 }
