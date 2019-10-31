@@ -44,22 +44,22 @@ public class Program
 
             bool isRange = false;
 
-            for (int innerIndex = index + 2; innerIndex < args.Length; innerIndex++)
+            for (int innerIndex = index + 2; innerIndex < args.Length; innerIndex++) // this dosent work at -2, 0, 1, 2 it fails
             {
                 int innerNum = args[innerIndex];
-                isRange = innerNum - startNum == innerIndex;
+                isRange = innerNum - startNum == innerIndex - index;
 
                 if (!isRange)
                 {
-                    sb.Append($"{startNum}"); // this at the start of each startIndex so that you dont need to copy it too much
+                    sb.Append($"{startNum},"); // this at the start of each startIndex so that you dont need to copy it too much
                     break;
                 }
                 else //is a range, see how long it continues;
                 {
-                    for (int rangeLength = innerIndex + 1; rangeLength < args.Length; rangeLength++)
+                    for (int rangeLength = innerIndex; rangeLength < args.Length; rangeLength++)
                     {
                         int nextNum = args[rangeLength];
-                        isRange = nextNum - startNum == rangeLength;
+                        isRange = nextNum - startNum == rangeLength - index;
                         if (!isRange)
                         {
                             int lastNumInrange = args[rangeLength - 1];
