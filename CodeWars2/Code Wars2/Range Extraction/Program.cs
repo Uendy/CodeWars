@@ -51,9 +51,8 @@ public class Program
 
                 if (!isRange)
                 {
-                    int middleNum = args[index + 1];
-                    sb.Append($"{startNum}, {middleNum}, {innerNum}");
-                    index = innerIndex; // so skip them
+                    sb.Append($"{startNum}"); // this at the start of each startIndex so that you dont need to copy it too much
+                    break;
                 }
                 else //is a range, see how long it continues;
                 {
