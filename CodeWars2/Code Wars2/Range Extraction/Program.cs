@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -35,7 +34,7 @@ public class Program
         bool notRange = array.Count() < 3; //it is not considered a range unless it spans at least 3 numbers.
         if (notRange)
         {
-            return string.Join(", ", array);
+            return string.Join(",", array);
         }
 
         var sb = new StringBuilder();
@@ -54,7 +53,38 @@ public class Program
             }
 
             int startNum = array[index];
-            bool isRange = false;
+            int seqNum = array[index + 2];
+
+            bool isRange = seqNum - startNum == 2; // minimum for a sequence, see how long it goes
+            if (isRange)
+            {
+                for (int innerIndex = index + 3; innerIndex < array.Count(); innerIndex++)
+                {
+                    int nextNum = array[innerIndex];
+
+                    bool lastIndex = innerIndex == array.Count() - 1; // make the final sequence return the sb
+                    if (lastIndex)
+                    {
+                        sb.Append($"{startNum}-{nextNum}");
+                        string outPut = sb.ToString();
+                        return outPut;
+                    }
+
+                    bool continueSeq = nextNum - startNum == innerIndex; 
+                    if (!continueSeq) // append these numbers as a sequence and update the index to the current innerIndex
+                    {
+                        int endOfNum = array[innerIndex - 1]; // get the last num in the sequence
+                        sb.Append($"{startNum}-{endOfNum}");
+
+                        index = innerIndex - 1; // give it the index of the endNum, as the for-cycle will move itself to the next num
+                        break;
+                    }
+                }
+            }
+            else // not a range, so appent it as a non-seq num and move onto the next
+            {
+                sb.Append($"{startNum},");
+            }
 
         }
 
