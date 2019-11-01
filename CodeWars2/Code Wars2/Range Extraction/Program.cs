@@ -58,23 +58,22 @@ public class Program
             bool isRange = seqNum - startNum == 2; // minimum for a sequence, see how long it goes
             if (isRange)
             {
+                bool lastNum = index + 2 == array.Count() - 1; // make the final sequence return the sb
+                if (lastNum)
+                {
+                    sb.Append($"{startNum}-{seqNum}");
+                    break;
+                }
+
                 for (int innerIndex = index + 3; innerIndex < array.Count(); innerIndex++)
                 {
                     int nextNum = array[innerIndex];
 
-                    bool lastIndex = innerIndex == array.Count() - 1; // make the final sequence return the sb
-                    if (lastIndex)
-                    {
-                        sb.Append($"{startNum}-{nextNum}");
-                        string outPut = sb.ToString();
-                        return outPut;
-                    }
-
-                    bool continueSeq = nextNum - startNum == innerIndex; 
+                    bool continueSeq = nextNum - startNum == innerIndex - index; 
                     if (!continueSeq) // append these numbers as a sequence and update the index to the current innerIndex
                     {
                         int endOfNum = array[innerIndex - 1]; // get the last num in the sequence
-                        sb.Append($"{startNum}-{endOfNum}");
+                        sb.Append($"{startNum}-{endOfNum},");
 
                         index = innerIndex - 1; // give it the index of the endNum, as the for-cycle will move itself to the next num
                         break;
