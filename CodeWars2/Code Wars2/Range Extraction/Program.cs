@@ -30,52 +30,32 @@ public class Program
 
     public static string TruncateRange(int[] args)
     {
-        bool notRange = args.Length < 3; //it is not considered a range unless it spans at least 3 numbers.
+        var array = args.ToList();
+
+        bool notRange = array.Count() < 3; //it is not considered a range unless it spans at least 3 numbers.
         if (notRange)
         {
-            return string.Join(", ", args);
+            return string.Join(", ", array);
         }
 
         var sb = new StringBuilder();
 
-        for (int index = 0; index < args.Length; index++)
+        for (int index = 0; index < array.Count(); index++)
         {
-            int startNum = args[index];
+            bool lastTwoNums = index >= array.Count - 2; // see if this works with 1 remaining in range
+            if (lastTwoNums) // if you are on the second to last, or last index, put them in a range, add the comma (if needed) and append to sb
+            {
+                int remainingCount = array.Count() - index;
+                var remainingRange = array.GetRange(index, remainingCount);
+                var stringRemaning = string.Join(",", remainingRange);
 
+                sb.Append(stringRemaning);
+                break;
+            }
+
+            int startNum = array[index];
             bool isRange = false;
 
-            for (int innerIndex = index + 2; innerIndex < args.Length; innerIndex++) // this dosent work at -2, 0, 1, 2 it fails
-            {
-                int innerNum = args[innerIndex];
-                isRange = innerNum - startNum == innerIndex - index;
-
-                if (!isRange)
-                {
-                    sb.Append($"{startNum},"); // this at the start of each startIndex so that you dont need to copy it too much
-                    break;
-                }
-                else //is a range, see how long it continues;
-                {
-                    for (int rangeLength = innerIndex; rangeLength < args.Length; rangeLength++)
-                    {
-                        int nextNum = args[rangeLength];
-                        isRange = nextNum - startNum == rangeLength - index;
-                        if (!isRange)
-                        {
-                            int lastNumInrange = args[rangeLength - 1];
-                            sb.Append($"{startNum}-{lastNumInrange}");
-                            break;
-                        }
-
-                        if (rangeLength == args.Length - 1) // go to end so put all nums from startNum to nextNum in a range
-                        {
-                            sb.Append($"{startNum}-{nextNum}");
-                            return sb.ToString();
-                        }
-                    }
-                }
-                // would like to do this next step with recoursion
-            }
         }
 
         string output = sb.ToString();
