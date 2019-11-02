@@ -78,6 +78,14 @@ public class Program
                         index = innerIndex - 1; // give it the index of the endNum, as the for-cycle will move itself to the next num
                         break;
                     }
+
+                    bool lastIndex = innerIndex == array.Count() - 1;
+                    if (lastIndex)
+                    {
+                        sb.Append($"{startNum}-{nextNum}");
+                        string outPut = sb.ToString();
+                        return outPut;
+                    }
                 }
             }
             else // not a range, so appent it as a non-seq num and move onto the next
