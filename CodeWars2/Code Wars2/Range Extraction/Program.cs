@@ -69,7 +69,7 @@ public class Program
                 {
                     int nextNum = array[innerIndex];
 
-                    bool continueSeq = nextNum - startNum == innerIndex - index; 
+                    bool continueSeq = nextNum - startNum == innerIndex - index;
                     if (!continueSeq) // append these numbers as a sequence and update the index to the current innerIndex
                     {
                         int endOfNum = array[innerIndex - 1]; // get the last num in the sequence

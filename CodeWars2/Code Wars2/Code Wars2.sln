@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mexican Wave", "Mexican Wav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Range Extraction", "Range Extraction\Range Extraction.csproj", "{A3A24A52-42A7-4B20-A4C1-0F6015A495F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Range Extraction V2", "Range Extraction V2\Range Extraction V2.csproj", "{8C9A1377-C9FD-4701-91E3-7E50CABEAA6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{A3A24A52-42A7-4B20-A4C1-0F6015A495F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3A24A52-42A7-4B20-A4C1-0F6015A495F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3A24A52-42A7-4B20-A4C1-0F6015A495F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C9A1377-C9FD-4701-91E3-7E50CABEAA6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9A1377-C9FD-4701-91E3-7E50CABEAA6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9A1377-C9FD-4701-91E3-7E50CABEAA6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9A1377-C9FD-4701-91E3-7E50CABEAA6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
