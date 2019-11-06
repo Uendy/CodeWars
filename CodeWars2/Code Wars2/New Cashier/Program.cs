@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Text.RegularExpressions;
 public class Program
 {
     public static void Main()
@@ -48,9 +45,28 @@ public class Program
     public static string GetOrder(string input)
     {
         var menu = new List<string>() { "Burger", "Fries", "Chicken", "Pizza", "Sandwich", "Onionrings", "Milkshake", "Coke" };
+        var occurances = new int[8];
 
-        var listOfOrder = new List<string>();
-        string order = string.Join(", ", listOfOrder);
+        for (int i = 0; i < 8; i++) // cycle through as each word and occurance are on the same index
+        {
+            string word = menu[i];
+            occurances[i] = Regex.Matches(input, word.ToLower()).Count;
+        }
+
+        var listOfOrder = new List<string>(); // put the words in the list x occurances
+        for (int index = 0; index < 8; index++)
+        {
+            bool atleastOnce = occurances[index] > 0;
+            if (atleastOnce)
+            {
+                for (int occured = 0; occured < occurances[index]; occured++)
+                {
+                    listOfOrder.Add(menu[index]);
+                }
+            }
+        }
+
+        string order = string.Join(" ", listOfOrder);
         return order;
     }
 }

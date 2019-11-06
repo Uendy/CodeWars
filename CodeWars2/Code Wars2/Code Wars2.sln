@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Range Extraction V2", "Rang
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Count IP Addresses", "Count IP Addresses\Count IP Addresses.csproj", "{7499D138-5367-4186-890F-23CADC07BBBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "New Cashier", "New Cashier\New Cashier.csproj", "{7EBC8FDC-0F67-48E6-8F6F-0C10197D6B63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{7499D138-5367-4186-890F-23CADC07BBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7499D138-5367-4186-890F-23CADC07BBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7499D138-5367-4186-890F-23CADC07BBBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBC8FDC-0F67-48E6-8F6F-0C10197D6B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBC8FDC-0F67-48E6-8F6F-0C10197D6B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBC8FDC-0F67-48E6-8F6F-0C10197D6B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBC8FDC-0F67-48E6-8F6F-0C10197D6B63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

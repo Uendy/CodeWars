@@ -7,7 +7,7 @@
     <ProjectGuid>{7EBC8FDC-0F67-48E6-8F6F-0C10197D6B63}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>New_Cashier</RootNamespace>
-    <AssemblyName>New_Cashier</AssemblyName>
+    <AssemblyName>New Cashier</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
