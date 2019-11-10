@@ -1,0 +1,7 @@
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\New Cashier\bin\Debug\New Cashier.exe.config
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\New Cashier\bin\Debug\New Cashier.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\New Cashier\bin\Debug\New Cashier.pdb
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\New Cashier\obj\Debug\New Cashier.csprojAssemblyReference.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\New Cashier\obj\Debug\New Cashier.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\New Cashier\obj\Debug\New Cashier.exe
+C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars2\Code Wars2\New Cashier\obj\Debug\New Cashier.pdb
