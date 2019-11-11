@@ -31,6 +31,10 @@ public class Program
         //Return Game over! if a player has won and another player tries to play.
         //Otherwise return Player n is on square x.Where n is the current player and x is the sqaure they are currently on.
 
+        //My spin on it:
+        //Decided to randomize the die instead of inputting them each time
+        //and printing the whole game on the console
+
         var random = new Random();
 
         var snakesAndLadders = new Dictionary<int, int>()
@@ -60,29 +64,66 @@ public class Program
         int playerOne = 0;
         int playerTwo = 0;
 
-        for (int turn = 0; playerOne == 100 || playerTwo == 100; turn++)
+        for (int turn = 0; playerOne != 100 && playerTwo != 100; turn++)
         {
             int firstDie = random.Next(1, 7);
             int secondDie = random.Next(1, 7);
 
             if (turn % 2 == 0) // p1 turn
             {
+                Console.Write($"PlayerOne rolls: {firstDie} and {secondDie} from {playerOne}");
                 playerOne = MovePiece(playerOne, firstDie, secondDie, snakesAndLadders);
+                Console.WriteLine($" and moves to {playerOne}");
             }
             else //p2 turn
             {
+                Console.Write($"PlayerTwo rolls: {firstDie} and {secondDie} from {playerTwo}");
                 playerTwo = MovePiece(playerOne, firstDie, secondDie, snakesAndLadders);
+                Console.WriteLine($" and moves to {playerTwo}");
+            }
+
+            if (firstDie == secondDie)
+            {
+                turn += 1; // or two to allow for a 2nd move when dice the same
             }
         }
 
+        Console.WriteLine("+-----------------------------------------------+");
+        if (playerOne == 100)
+        {
+            Console.WriteLine("PlayerOne wins!");
+        }
+        else // playerTwoOne
+        {
+            Console.WriteLine("PlayerTwo wins!");
+        }
 
-
-        
-            
+        Console.WriteLine($"Final Score: PlayerOne = {playerOne} and playerTwo = {playerTwo}");
     }
 
-    public static int MovePiece(int playerOne, int firstDie, int secondDie, Dictionary<int, int> snakesAndLadders)
+    public static int MovePiece(int initialPosition, int firstDie, int secondDie, Dictionary<int, int> snakesAndLadders)
     {
-        throw new NotImplementedException();
+        int newPosition = initialPosition + firstDie + secondDie;
+
+        bool gameOver = newPosition == 100;
+        if (gameOver)
+        {
+            return 100;
+        }
+
+        bool pentalty = newPosition >= 101;
+        if (pentalty)
+        {
+            int pointDeduction = newPosition - 100;
+            newPosition = 100 - pointDeduction;
+        }
+
+        bool snakeOrLadder = snakesAndLadders.ContainsKey(newPosition);
+        if (snakeOrLadder)
+        {
+            newPosition = snakesAndLadders[newPosition];
+        }
+
+        return newPosition;
     }
 }
