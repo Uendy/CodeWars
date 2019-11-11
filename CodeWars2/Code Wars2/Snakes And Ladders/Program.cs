@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 public class Program
 {
     public static void Main()
     {
+        #region
         //Task:
         //our task is to make a simple class called SnakesLadders. 
         //The test cases will call the method play(die1, die2) independantly of the state of the game or the player turn. 
@@ -30,6 +30,7 @@ public class Program
         //Return Player n Wins!.Where n is winning player that has landed on square 100 without any remainding moves left.
         //Return Game over! if a player has won and another player tries to play.
         //Otherwise return Player n is on square x.Where n is the current player and x is the sqaure they are currently on.
+        #endregion
 
         //My spin on it:
         //Decided to randomize the die instead of inputting them each time
@@ -61,8 +62,8 @@ public class Program
             [99] = 80
         };
 
-        int playerOne = 0;
-        int playerTwo = 0;
+        int playerOne = 1;
+        int playerTwo = 1;
 
         for (int turn = 0; playerOne != 100 && playerTwo != 100; turn++)
         {
@@ -71,14 +72,14 @@ public class Program
 
             if (turn % 2 == 0) // p1 turn
             {
-                Console.Write($"PlayerOne rolls: {firstDie} and {secondDie} from {playerOne}");
+                Console.Write($"PlayerOne rolls: [{firstDie}] and [{secondDie}] from position {playerOne}");
                 playerOne = MovePiece(playerOne, firstDie, secondDie, snakesAndLadders);
                 Console.WriteLine($" and moves to {playerOne}");
             }
             else //p2 turn
             {
-                Console.Write($"PlayerTwo rolls: {firstDie} and {secondDie} from {playerTwo}");
-                playerTwo = MovePiece(playerOne, firstDie, secondDie, snakesAndLadders);
+                Console.Write($"PlayerTwo rolls: [{firstDie}] and [{secondDie}] from position {playerTwo}");
+                playerTwo = MovePiece(playerTwo, firstDie, secondDie, snakesAndLadders);
                 Console.WriteLine($" and moves to {playerTwo}");
             }
 
