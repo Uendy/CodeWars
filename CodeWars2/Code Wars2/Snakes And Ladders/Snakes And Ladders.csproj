@@ -7,7 +7,7 @@
     <ProjectGuid>{C4F452A0-6797-4D5B-A3C8-A9F318F2D438}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Snakes_And_Ladders</RootNamespace>
-    <AssemblyName>Snakes_And_Ladders</AssemblyName>
+    <AssemblyName>Snakes And Ladders</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

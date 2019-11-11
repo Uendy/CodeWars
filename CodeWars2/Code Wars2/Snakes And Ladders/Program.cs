@@ -31,11 +31,58 @@ public class Program
         //Return Game over! if a player has won and another player tries to play.
         //Otherwise return Player n is on square x.Where n is the current player and x is the sqaure they are currently on.
 
-        var snakesAndLadders = new Dictionary<int, int>() {[2] = 38, [7] = 14, [8] = 31, [15] = 26, [21] = 42, [28] = 84, [36] = 44};
+        var random = new Random();
+
+        var snakesAndLadders = new Dictionary<int, int>()
+        {
+            [2] = 38, // kadders
+            [7] = 14,
+            [8] = 31,
+            [15] = 26,
+            [21] = 42,
+            [28] = 84,
+            [36] = 44,
+            [51] = 67,
+            [71] = 91,
+            [78] = 98,
+            [87] = 94,
+            [16] = 6, // snakes
+            [46] = 25,
+            [49] = 11,
+            [62] = 19,
+            [64] = 60,
+            [74] = 53,
+            [89] = 68,
+            [92] = 88,
+            [99] = 80
+        };
 
         int playerOne = 0;
         int playerTwo = 0;
 
+        for (int turn = 0; playerOne == 100 || playerTwo == 100; turn++)
+        {
+            int firstDie = random.Next(1, 7);
+            int secondDie = random.Next(1, 7);
 
+            if (turn % 2 == 0) // p1 turn
+            {
+                playerOne = MovePiece(playerOne, firstDie, secondDie, snakesAndLadders);
+            }
+            else //p2 turn
+            {
+                playerTwo = MovePiece(playerOne, firstDie, secondDie, snakesAndLadders);
+            }
+        }
+
+
+
+        
+            
+    }
+
+    public static int MovePiece(int playerOne, int firstDie, int secondDie, Dictionary<int, int> snakesAndLadders)
+    {
+        throw new NotImplementedException();
     }
 }
