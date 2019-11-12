@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "New Cashier", "New Cashier\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snakes And Ladders", "Snakes And Ladders\Snakes And Ladders.csproj", "{C4F452A0-6797-4D5B-A3C8-A9F318F2D438}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Try GroupBy", "Try GroupBy\Try GroupBy.csproj", "{EE62E4FA-1F97-4111-B36E-E3F7CDF99BC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{C4F452A0-6797-4D5B-A3C8-A9F318F2D438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4F452A0-6797-4D5B-A3C8-A9F318F2D438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4F452A0-6797-4D5B-A3C8-A9F318F2D438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE62E4FA-1F97-4111-B36E-E3F7CDF99BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE62E4FA-1F97-4111-B36E-E3F7CDF99BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE62E4FA-1F97-4111-B36E-E3F7CDF99BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE62E4FA-1F97-4111-B36E-E3F7CDF99BC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
