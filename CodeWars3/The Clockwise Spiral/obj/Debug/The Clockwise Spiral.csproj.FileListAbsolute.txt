@@ -5,3 +5,10 @@ C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Cl
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\obj\Debug\The Clockwise Spiral.csproj.CoreCompileInputs.cache
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\obj\Debug\The Clockwise Spiral.exe
 C:\Users\Alexb\Documents\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\obj\Debug\The Clockwise Spiral.pdb
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\bin\Debug\The Clockwise Spiral.exe.config
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\bin\Debug\The Clockwise Spiral.exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\bin\Debug\The Clockwise Spiral.pdb
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\obj\Debug\The Clockwise Spiral.csprojAssemblyReference.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\obj\Debug\The Clockwise Spiral.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\obj\Debug\The Clockwise Spiral.exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\The Clockwise Spiral\obj\Debug\The Clockwise Spiral.pdb

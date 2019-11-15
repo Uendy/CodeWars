@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 public class Program
 {
     public static void Main()
@@ -40,7 +41,7 @@ public class Program
         {
 
             int indexOfClosedBracket = input.IndexOf(')');
-            int bracketSpan = indexOfClosedBracket - indexOfBracket;
+            int bracketSpan = indexOfClosedBracket - indexOfBracket + 1;
 
             var range = input.Substring(indexOfBracket, bracketSpan);
 
@@ -48,12 +49,36 @@ public class Program
             var numbersInBrackets = GetNumber(range);
 
             // need to make them in EDMAS Format
+            bool containsExponent = operatorsInBrackets.Contains('^'); // check if any exponents -> resolve all then continue on EDMAS
+            while (containsExponent)
+            {
+                int indexOfExponent = operatorsInBrackets.IndexOf('^');
 
-            var newRange = string.Empty; // fill this with the uncovered brackets
+                double firstNum = numbersInBrackets[indexOfExponent]; // get the number before the exponent op
+                double secondNum = numbersInBrackets[indexOfExponent + 1]; // get the number afte the exponent op
+
+                double resultNum = Exponentiation(firstNum, secondNum);
+
+                operatorsInBrackets.Remove('^'); // replace the past expression of num1 ^ num2 with the result
+                numbersInBrackets.RemoveAt(indexOfExponent);
+                numbersInBrackets.RemoveAt(indexOfExponent);
+                numbersInBrackets.Insert(indexOfExponent, resultNum);
+
+                containsExponent = operatorsInBrackets.Contains('^');
+            }
+
+
+            var newRange = new StringBuilder(); // fill this with the uncovered brackets
+            for (int indexOfNum = 0; indexOfNum < numbersInBrackets.Count() - 2; indexOfNum++)
+            {
+                newRange.Append($"{numbersInBrackets[indexOfNum]} {operatorsInBrackets[indexOfNum]}");
+            }
+            newRange.Append(numbersInBrackets[numbersInBrackets.Count() - 1]);
+
 
             //When you make the methods for each operator fill them in here for whats in the brackets
 
-            input = input.Replace(range, newRange);
+            input = input.Replace(range, newRange.ToString());
             indexOfBracket = input.IndexOf('('); // check for more brackets, I wont cover double brackets
         }
 
@@ -77,7 +102,7 @@ public class Program
         var inputAsArray = input.ToCharArray();
         foreach (var item in inputAsArray)
         {
-            bool isOperator = item == '+' || item == '-' || item == '/' || item == '*' || item == '^' || item == '(' || item == ')';
+            bool isOperator = item == '+' || item == '-' || item == '/' || item == '*' || item == '^';
             if (isOperator)
             {
                 operators.Add(item);
