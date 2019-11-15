@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 public class Program
 {
     public static void Main()
@@ -48,6 +47,8 @@ public class Program
             var operatorsInBrackets = GetOperators(range);
             var numbersInBrackets = GetNumber(range);
 
+            // need to make them in EDMAS Format
+
             var newRange = string.Empty; // fill this with the uncovered brackets
 
             //When you make the methods for each operator fill them in here for whats in the brackets
@@ -84,5 +85,35 @@ public class Program
         }
 
         return operators;
+    }
+
+    public static double Addition(double firstNum, double secondNum)
+    {
+        double sum = firstNum + secondNum;
+        return sum;
+    }
+
+    public static double Subtraction(double firstNum, double secondNum)
+    {
+        double sum = firstNum - secondNum;
+        return sum;
+    }
+
+    public static double Multiplication(double firstNum, double secondNum)
+    {
+        double sum = firstNum * secondNum;
+        return sum;
+    }
+
+    public static double Division(double firstNum, double secondNum)
+    {
+        double sum = firstNum / secondNum;
+        return sum;
+    }
+
+    public static double Exponentiation(double firstNum, double secondNum)
+    {
+        double sum = Math.Pow(firstNum, secondNum);
+        return sum;
     }
 }
