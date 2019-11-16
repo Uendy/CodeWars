@@ -8,7 +8,7 @@ public class Program
     {
         //iven a string of characters and symbols, calculate the expected result. The string consists of numbers, and the operators:
 
-        /// division
+        // division
         //+ addition
         //- subtraction
         //\*multiplication
@@ -33,7 +33,7 @@ public class Program
 
     public static object ApplyCalculator(string input)
     {
-        var result = 0;
+        double result = 0;
 
 
         var indexOfBracket = input.IndexOf('(');
@@ -48,25 +48,7 @@ public class Program
             var operatorsInBrackets = GetOperators(range);
             var numbersInBrackets = GetNumber(range);
 
-            // need to make them in EDMAS Format
-            bool containsExponent = operatorsInBrackets.Contains('^'); // check if any exponents -> resolve all then continue on EDMAS
-            while (containsExponent)
-            {
-                int indexOfExponent = operatorsInBrackets.IndexOf('^');
-
-                double firstNum = numbersInBrackets[indexOfExponent]; // get the number before the exponent op
-                double secondNum = numbersInBrackets[indexOfExponent + 1]; // get the number afte the exponent op
-
-                double resultNum = Exponentiation(firstNum, secondNum);
-
-                operatorsInBrackets.Remove('^'); // replace the past expression of num1 ^ num2 with the result
-                numbersInBrackets.RemoveAt(indexOfExponent);
-                numbersInBrackets.RemoveAt(indexOfExponent);
-                numbersInBrackets.Insert(indexOfExponent, resultNum);
-
-                containsExponent = operatorsInBrackets.Contains('^');
-            }
-
+            range = EDMAS(operatorsInBrackets, numbersInBrackets).ToString();
 
             var newRange = new StringBuilder(); // fill this with the uncovered brackets
             for (int indexOfNum = 0; indexOfNum < numbersInBrackets.Count() - 2; indexOfNum++)
@@ -81,6 +63,10 @@ public class Program
             input = input.Replace(range, newRange.ToString());
             indexOfBracket = input.IndexOf('('); // check for more brackets, I wont cover double brackets
         }
+
+        // TODO: the same but not inside a bracket -> so put each found operator in a method and add while loops in here and the brackets
+
+        result = double.Parse(input);
 
         return result;
     }
@@ -110,6 +96,30 @@ public class Program
         }
 
         return operators;
+    }
+
+    public static object EDMAS(List<char> operatorsInBrackets, List<double> numbersInBrackets)
+    {
+        // need to make them in EDMAS Format
+        bool containsExponent = operatorsInBrackets.Contains('^'); // check if any exponents -> resolve all then continue on EDMAS
+        while (containsExponent)
+        {
+            int indexOfExponent = operatorsInBrackets.IndexOf('^');
+
+            double firstNum = numbersInBrackets[indexOfExponent]; // get the number before the exponent op
+            double secondNum = numbersInBrackets[indexOfExponent + 1]; // get the number afte the exponent op
+
+            double resultNum = Exponentiation(firstNum, secondNum);
+
+            operatorsInBrackets.Remove('^'); // replace the past expression of num1 ^ num2 with the result
+            numbersInBrackets.RemoveAt(indexOfExponent);
+            numbersInBrackets.RemoveAt(indexOfExponent);
+            numbersInBrackets.Insert(indexOfExponent, resultNum);
+
+            containsExponent = operatorsInBrackets.Contains('^');
+        }
+
+        return numbersInBrackets;
     }
 
     public static double Addition(double firstNum, double secondNum)
