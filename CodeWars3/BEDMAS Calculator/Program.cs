@@ -33,7 +33,7 @@ public class Program
 
     public static object ApplyCalculator(string input)
     {
-        double result = 0;
+        //double result = 0;
 
 
         var indexOfBracket = input.IndexOf('(');
@@ -64,9 +64,11 @@ public class Program
             indexOfBracket = input.IndexOf('('); // check for more brackets, I wont cover double brackets
         }
 
-        // TODO: the same but not inside a bracket -> so put each found operator in a method and add while loops in here and the brackets
+        //For the expanded expression without any brackets
+        var numbers = GetNumber(input);
+        var operators = GetOperators(input);
 
-        result = double.Parse(input);
+        double result = EDMAS(operators, numbers); 
 
         return result;
     }
@@ -98,28 +100,90 @@ public class Program
         return operators;
     }
 
-    public static object EDMAS(List<char> operatorsInBrackets, List<double> numbersInBrackets)
+    public static double EDMAS(List<char> operators, List<double> numbers)
     {
         // need to make them in EDMAS Format
-        bool containsExponent = operatorsInBrackets.Contains('^'); // check if any exponents -> resolve all then continue on EDMAS
+        bool containsExponent = operators.Contains('^'); // check if any exponents -> resolve all then continue on EDMAS
         while (containsExponent)
         {
-            int indexOfExponent = operatorsInBrackets.IndexOf('^');
+            ShortenExpression(numbers, operators, '^');
 
-            double firstNum = numbersInBrackets[indexOfExponent]; // get the number before the exponent op
-            double secondNum = numbersInBrackets[indexOfExponent + 1]; // get the number afte the exponent op
-
-            double resultNum = Exponentiation(firstNum, secondNum);
-
-            operatorsInBrackets.Remove('^'); // replace the past expression of num1 ^ num2 with the result
-            numbersInBrackets.RemoveAt(indexOfExponent);
-            numbersInBrackets.RemoveAt(indexOfExponent);
-            numbersInBrackets.Insert(indexOfExponent, resultNum);
-
-            containsExponent = operatorsInBrackets.Contains('^');
+            containsExponent = operators.Contains('^');
         }
 
-        return numbersInBrackets;
+        bool containsDivision = operators.Contains('/');
+        while (containsDivision)
+        {
+            ShortenExpression(numbers, operators, '/');
+
+            containsDivision = operators.Contains('/');
+        }
+
+        bool containsMultiplication = operators.Contains('*');
+        while (containsMultiplication)
+        {
+            ShortenExpression(numbers, operators, '*');
+
+            containsMultiplication = operators.Contains('*');
+        }
+
+        bool containsAddition = operators.Contains('+');
+        while (containsAddition)
+        {
+            ShortenExpression(numbers, operators, '+');
+
+            containsAddition = operators.Contains('+');
+        }
+
+        bool containsSubtraction = operators.Contains('-');
+        while (containsSubtraction)
+        {
+            ShortenExpression(numbers, operators, '-');
+
+            containsSubtraction = operators.Contains('-');
+        }
+
+        return numbers[0];
+    }
+
+    public static void ShortenExpression(List<double> numbers, List<char> operators, char symbol) // allows me to not copy paste code for each operator: removing the 2 addends and the operator 
+    {
+        int indexOfExponent = operators.IndexOf(symbol);
+
+        double firstNum = numbers[indexOfExponent]; // get the number before the exponent op
+        double secondNum = numbers[indexOfExponent + 1]; // get the number afte the exponent op
+
+        double resultNum = 0;
+
+        switch (symbol)
+        {
+            case '^':
+                resultNum = Exponentiation(firstNum, secondNum);
+                break;
+
+            case '/':
+                resultNum = Division(firstNum, secondNum);
+                break;
+
+            case '*':
+                resultNum = Multiplication(firstNum, secondNum);
+                break;
+
+            case '+':
+                resultNum = Addition(firstNum, secondNum);
+                break;
+
+            case '-':
+                resultNum = Subtraction(firstNum, secondNum);
+                break;
+            default:
+                break;
+        }
+
+        operators.Remove(symbol); // replace the past expression of num1 ^ num2 with the result
+        numbers.RemoveAt(indexOfExponent);
+        numbers.RemoveAt(indexOfExponent);
+        numbers.Insert(indexOfExponent, resultNum);
     }
 
     public static double Addition(double firstNum, double secondNum)
