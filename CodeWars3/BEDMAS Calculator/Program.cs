@@ -39,28 +39,20 @@ public class Program
         var indexOfBracket = input.IndexOf('(');
         while (indexOfBracket != -1) // cycle through all brackets and solve them
         {
+            // find the shortest distance from '(' to ')' = the first brackets we have to expand
+
+            int shortestDistance = 0;
+            int index = 0;
 
             int indexOfClosedBracket = input.IndexOf(')');
             int bracketSpan = indexOfClosedBracket - indexOfBracket + 1;
 
             var range = input.Substring(indexOfBracket, bracketSpan);
 
-            var operatorsInBrackets = GetOperators(range);
-            var numbersInBrackets = GetNumber(range);
-
-            range = EDMAS(operatorsInBrackets, numbersInBrackets).ToString();
-
-            var newRange = new StringBuilder(); // fill this with the uncovered brackets
-            for (int indexOfNum = 0; indexOfNum < numbersInBrackets.Count() - 2; indexOfNum++)
-            {
-                newRange.Append($"{numbersInBrackets[indexOfNum]} {operatorsInBrackets[indexOfNum]}");
-            }
-            newRange.Append(numbersInBrackets[numbersInBrackets.Count() - 1]);
-
-
+            string expanded = ExpandBrackets(range);
             //When you make the methods for each operator fill them in here for whats in the brackets
 
-            input = input.Replace(range, newRange.ToString());
+            input = input.Replace(range, expanded);
             indexOfBracket = input.IndexOf('('); // check for more brackets, I wont cover double brackets
         }
 
@@ -98,6 +90,30 @@ public class Program
         }
 
         return operators;
+    }
+
+    public static string FindInnerMostBrackets(string input)
+    {
+        string range = "";
+
+        return range;
+    }
+
+    public static string ExpandBrackets(string range) // returns the brackets expression as expanded
+    {
+        var operatorsInBrackets = GetOperators(range);
+        var numbersInBrackets = GetNumber(range);
+
+        range = EDMAS(operatorsInBrackets, numbersInBrackets).ToString();
+
+        var newRange = new StringBuilder(); // fill this with the uncovered brackets
+        for (int indexOfNum = 0; indexOfNum < numbersInBrackets.Count() - 2; indexOfNum++) // could be wrong, test it out
+        {
+            newRange.Append($"{numbersInBrackets[indexOfNum]} {operatorsInBrackets[indexOfNum]}");
+        }
+        newRange.Append(numbersInBrackets[numbersInBrackets.Count() - 1]);
+
+        return newRange.ToString();
     }
 
     public static double EDMAS(List<char> operators, List<double> numbers)
