@@ -6,7 +6,7 @@ public class Program
 {
     public static void Main()
     {
-        //iven a string of characters and symbols, calculate the expected result. The string consists of numbers, and the operators:
+        //Given a string of characters and symbols, calculate the expected result. The string consists of numbers, and the operators:
 
         // division
         //+ addition
@@ -33,23 +33,13 @@ public class Program
 
     public static object ApplyCalculator(string input)
     {
-        //double result = 0;
-
-
+        // cycle through all brackets and solve them
         var indexOfBracket = input.IndexOf('(');
-        while (indexOfBracket != -1) // cycle through all brackets and solve them
+        while (indexOfBracket != -1) 
         {
-            // find the shortest distance from '(' to ')' = the first brackets we have to expand
+            string range = FindInnerMostBrackets(input); // find the shortest distance from '(' to ')' = the first brackets we have to expand
 
-            int shortestDistance = 0;
-            int index = 0;
-
-            int indexOfClosedBracket = input.IndexOf(')');
-            int bracketSpan = indexOfClosedBracket - indexOfBracket + 1;
-
-            var range = input.Substring(indexOfBracket, bracketSpan);
-
-            string expanded = ExpandBrackets(range);
+            string expanded = ExpandBrackets($"({range})");
             //When you make the methods for each operator fill them in here for whats in the brackets
 
             input = input.Replace(range, expanded);
@@ -94,7 +84,45 @@ public class Program
 
     public static string FindInnerMostBrackets(string input)
     {
-        string range = "";
+        var indexOfStartBrackets = new List<int>(); // get all the '(' by index
+        int indexOfStart = input.IndexOf('(');
+        while (indexOfStart >= 0)
+        {
+            indexOfStartBrackets.Add(indexOfStart);
+            indexOfStart = input.IndexOf('(', indexOfStart + 1);
+        }
+
+        var indexOfEndBrackets = new List<int>(); // get all the ')' by index
+        int indexOfEnd = input.IndexOf(')');
+        while (indexOfEnd >= 0)
+        {
+            indexOfEndBrackets.Add(indexOfEnd);
+            indexOfEnd = input.IndexOf(')', indexOfEnd + 1);
+        }
+
+        int smallestDifference = int.MaxValue;
+        int smallestStartIndex = int.MaxValue;
+
+        for (int startBracket = 0; startBracket < indexOfStartBrackets.Count(); startBracket++) // find the smallest distance between to brackets
+        {
+            int startIndex = indexOfStartBrackets[startBracket];
+
+            for (int endBracket = 0; endBracket < indexOfEndBrackets.Count(); endBracket++)
+            {
+                int endIndex = indexOfEndBrackets[endBracket];
+
+                int difference = endIndex - startIndex;
+
+                bool shortestDifference = difference < smallestDifference;
+                if (shortestDifference)
+                {
+                    smallestDifference = difference;
+                    smallestStartIndex = startIndex;
+                }
+            }
+        }
+
+        string range = input.Substring(smallestStartIndex, smallestDifference);
 
         return range;
     }
