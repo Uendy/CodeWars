@@ -6,6 +6,7 @@ public class Program
 {
     public static void Main()
     {
+        #region
         //Given a string of characters and symbols, calculate the expected result. The string consists of numbers, and the operators:
 
         // division
@@ -22,16 +23,30 @@ public class Program
 
         //"3+4*2"
         //"3 +                             4*   2"
+        #endregion
 
-        string input = Console.ReadLine().Trim();
+        Console.WriteLine("Welcome to my calculator");
+
+        Console.WriteLine("You can use any of the following functions:");
+        Console.WriteLine("- Addition (+)");
+        Console.WriteLine("- Subtraction (-)");
+        Console.WriteLine("- Multiplication (*)");
+        Console.WriteLine("- Division (/)");
+        Console.WriteLine("- Exponent (^)");
+
+        Console.WriteLine("You can input and recieve results as decimal numbers aswell");
+
+        Console.Write("Input your function here: ");
+
+        string input = Console.ReadLine();
 
         var result = ApplyCalculator(input);
 
-        Console.WriteLine(result);
+        Console.WriteLine($"= {result}");
         
     }
 
-    public static object ApplyCalculator(string input)
+    public static double ApplyCalculator(string input)
     {
         // cycle through all brackets and solve them
         var indexOfBracket = input.IndexOf('(');
