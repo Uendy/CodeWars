@@ -23,6 +23,8 @@ public class Program
 
         //"3+4*2"
         //"3 +                             4*   2"
+
+        // ! Dosen't support negative numbers
         #endregion
 
         Console.WriteLine("Welcome to my calculator");
