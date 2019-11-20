@@ -80,6 +80,7 @@ public class Program
             .Select(double.Parse)
             .ToList();
 
+
         return numbers;
     }
 
@@ -87,15 +88,21 @@ public class Program
     {
         var operators = new List<char>();
         var inputAsArray = input.ToCharArray();
-        foreach (var item in inputAsArray)
+
+        for (int index = 0; index < inputAsArray.Count(); index++)
         {
-            bool isOperator = item == '+' || item == '-' || item == '/' || item == '*' || item == '^';
+            char currentSymbol = inputAsArray[index];
+
+            bool isOperator = currentSymbol == '+' || currentSymbol == '-' || currentSymbol == '/' || currentSymbol == '*' || currentSymbol == '^';
             if (isOperator)
             {
-                operators.Add(item);
+                bool negativeNum = currentSymbol == '-' && char.IsDigit(inputAsArray[index + 1]); // to not count negative nums as an operator
+                if (!negativeNum)
+                {
+                    operators.Add(currentSymbol);
+                }
             }
         }
-
         return operators;
     }
 
