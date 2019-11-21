@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 public class Program
 {
     public static void Main()
@@ -74,12 +75,15 @@ public class Program
 
     public static List<double> GetNumber(string input)
     {
-        var numbers = input
-            .Split(new[] { '+', '-', '/', '*', '^', '(', ')' }, StringSplitOptions.RemoveEmptyEntries)
-            .Select(x => x.Trim())
-            .Select(double.Parse)
-            .ToList();
+        //got the idea to get the numbers via REGEX
+        //var numbers = input
+        //    .Split(new[] { '+', '-', '/', '*', '^', '(', ')' }, StringSplitOptions.RemoveEmptyEntries)
+        //    .Select(x => x.Trim())
+        //    .Select(double.Parse)
+        //    .ToList();
+        var regex = new Regex();
 
+        var numbers = new List<double>();
 
         return numbers;
     }
