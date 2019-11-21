@@ -81,9 +81,18 @@ public class Program
         //    .Select(x => x.Trim())
         //    .Select(double.Parse)
         //    .ToList();
-        var regex = new Regex();
 
         var numbers = new List<double>();
+
+        string regexPattern = @"(?:-|\s)\d+(?:\d+|(\.\d+))";
+        var regex = new Regex(regexPattern);
+
+        var matches = regex.Matches(input);
+        foreach (Match match in matches)
+        {
+            var number = double.Parse(match.ToString());
+            numbers.Add(number);
+        }
 
         return numbers;
     }
