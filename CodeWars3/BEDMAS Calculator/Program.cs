@@ -75,16 +75,9 @@ public class Program
 
     public static List<double> GetNumber(string input)
     {
-        //got the idea to get the numbers via REGEX
-        //var numbers = input
-        //    .Split(new[] { '+', '-', '/', '*', '^', '(', ')' }, StringSplitOptions.RemoveEmptyEntries)
-        //    .Select(x => x.Trim())
-        //    .Select(double.Parse)
-        //    .ToList();
-
         var numbers = new List<double>();
 
-        string regexPattern = @"(?:-|\s)\d+(?:\d+|(\.\d+))";
+        string regexPattern = @"[-]?\d+(\.\d+)?"; // took me ages to figure this out
         var regex = new Regex(regexPattern);
 
         var matches = regex.Matches(input);
