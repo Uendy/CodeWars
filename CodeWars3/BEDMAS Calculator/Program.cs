@@ -217,6 +217,11 @@ public class Program
             containsSubtraction = operators.Contains('-');
         }
 
+        if (numbers.Count() > 1) // if the input is num-num ex: 1-1
+        {
+            numbers[0] = numbers[0] + numbers[1];
+        }
+
         return numbers[0];
     }
 
