@@ -95,7 +95,7 @@ public class Program
         var operators = new List<char>();
         var inputAsArray = input.ToCharArray();
 
-        for (int index = 0; index < inputAsArray.Count(); index++)
+        for (int index = 0; index < inputAsArray.Count() - 1; index++)
         {
             char currentSymbol = inputAsArray[index];
 
@@ -162,7 +162,7 @@ public class Program
         var operatorsInBrackets = GetOperators(range);
         var numbersInBrackets = GetNumber(range);
 
-        range = EDMAS(operatorsInBrackets, numbersInBrackets).ToString();
+        //range = EDMAS(operatorsInBrackets, numbersInBrackets).ToString();
 
         var newRange = new StringBuilder(); // fill this with the uncovered brackets
         for (int indexOfNum = 0; indexOfNum < numbersInBrackets.Count() - 2; indexOfNum++) // could be wrong, test it out
