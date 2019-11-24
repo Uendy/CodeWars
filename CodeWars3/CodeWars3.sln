@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Clockwise Spiral", "The
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BEDMAS Calculator", "BEDMAS Calculator\BEDMAS Calculator.csproj", "{ED1B49FE-3FBE-4191-8518-BF4CEF7F0363}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BEDMAS Calculator V2", "BEDMAS Calculator V2\BEDMAS Calculator V2.csproj", "{352E17D8-3EFF-43AE-8584-A3FBF0F2AC8D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{ED1B49FE-3FBE-4191-8518-BF4CEF7F0363}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED1B49FE-3FBE-4191-8518-BF4CEF7F0363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED1B49FE-3FBE-4191-8518-BF4CEF7F0363}.Release|Any CPU.Build.0 = Release|Any CPU
-		{352E17D8-3EFF-43AE-8584-A3FBF0F2AC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{352E17D8-3EFF-43AE-8584-A3FBF0F2AC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{352E17D8-3EFF-43AE-8584-A3FBF0F2AC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{352E17D8-3EFF-43AE-8584-A3FBF0F2AC8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
