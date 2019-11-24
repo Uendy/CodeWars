@@ -133,7 +133,7 @@ public class Program
             }
         }
 
-        var range = input.GetRange(smallestStartIndex, smallestDifference);
+        var range = input.GetRange(smallestStartIndex + 1, smallestDifference - 1);
         //expand the brackets
         var newRange = BEDMAS(range);
 
@@ -159,27 +159,189 @@ public class Program
         var outPut = new List<string>();
 
         var numbers = GetNumbers(range);
-        var operators = GetOperators();
+        var operators = GetOperators(range);
 
+        var result = EDMAS(numbers, operators);
+
+        return outPut;
     }
 
-    public static List<string> GetOperators(List<string> range)
+    public static double EDMAS(Dictionary<int, double> numbers, Dictionary<int, string> operators)
     {
-        var operators = new List<string>();
+        // need to make them in EDMAS Format
+        bool containsExponent = operators.Values.Contains("^"); // check if any exponents -> resolve all then continue on EDMAS
+        while (containsExponent)
+        {
+            ShortenExpression(numbers, operators, "^");
+
+            containsExponent = operators.Values.Contains("^");
+        }
+
+        bool containsDivision = operators.Values.Contains("/");
+        while (containsDivision)
+        {
+            ShortenExpression(numbers, operators, "/");
+
+            containsDivision = operators.Values.Contains("/");
+        }
+
+        bool containsMultiplication = operators.Values.Contains("*");
+        while (containsMultiplication)
+        {
+            ShortenExpression(numbers, operators, "*");
+
+            containsMultiplication = operators.Values.Contains("*");
+        }
+
+        bool containsAddition = operators.Values.Contains("+");
+        while (containsAddition)
+        {
+            ShortenExpression(numbers, operators, "+");
+
+            containsAddition = operators.Values.Contains("+");
+        }
+
+        bool containsSubtraction = operators.Values.Contains("-");
+        while (containsSubtraction)
+        {
+            ShortenExpression(numbers, operators, "-");
+
+            containsSubtraction = operators.Values.Contains("-");
+        }
+
+        return numbers[0];
+    }
+
+    public static void ShortenExpression(Dictionary<int, double> numbers, Dictionary<int, string> operators, string symbol) // allows me to not copy paste code for each operator: removing the 2 addends and the operator 
+    {
+        //find the first occurance of the symbol in the operator dict (values) 
+        int indexOfOperator = -1;
+        foreach (var key in operators.Keys)
+        {
+            bool rightOperator = operators[key] == symbol;
+            if (rightOperator)
+            {
+                indexOfOperator = key;
+                break;
+            }
+        }
+
+        //Find the closest smaller than indexOfOp key in nums = the first Num (before operator)
+        double firstNum = double.MinValue;
+        foreach (var key in numbers.Keys.Where(key => key < indexOfOperator)) 
+        {
+            firstNum = numbers[key];
+        }
+
+        //Find the closest bigget than indexOfOp key in nums = the second num (after operator)
+        double secondNum = double.MinValue;
+        foreach (var key in numbers.Keys.Where(key => key > indexOfOperator))
+        {
+            secondNum = numbers[key];
+        }
+
+        double resultNum = 0;
+
+        switch (symbol)
+        {
+            case "^":
+                resultNum = Exponentiation(firstNum, secondNum);
+                break;
+
+            case "/":
+                resultNum = Division(firstNum, secondNum);
+                break;
+
+            case "*":
+                resultNum = Multiplication(firstNum, secondNum);
+                break;
+
+            case "+":
+                resultNum = Addition(firstNum, secondNum);
+                break;
+
+            case "-":
+                resultNum = Subtraction(firstNum, secondNum);
+                break;
+            default:
+                break;
+        }
+
+        //operators.Remove(symbol); // replace the past expression of num1 ^ num2 with the result
+        //numbers.RemoveAt(indexOfExponent);
+        //numbers.RemoveAt(indexOfExponent);
+        //numbers.Insert(indexOfExponent, resultNum);
+    }
+
+    public static Dictionary<int, string> GetOperators(List<string> range)
+    {
+        var operators = new Dictionary<int, string>(); // key = index, value = operator
 
         var possibleOperators = new List<string>() { "+", "-", "*", "/", "^" };
 
-        foreach (var item in range)
+        for (int index = 0; index < range.Count(); index++)
         {
-            bool isOperator = possibleOperators.Contains(item);
-            operators.Add(item);
+            string currentString = range[index];
+
+            bool isOperator = possibleOperators.Contains(currentString);
+            if (isOperator)
+            {
+                operators[index] = currentString;
+            }
         }
 
         return operators;
     }
 
-    public static List<double>GetNumbers(List<string> range)
+    public static Dictionary<int, double>GetNumbers(List<string> range)
     {
-        throw new NotImplementedException();
+        var numbers = new Dictionary<int, double>(); // key = index, value = the number
+
+        string regexPattern = @"\d+(\.\d+)?"; 
+        var regex = new Regex(regexPattern);
+
+        for (int index = 0; index < range.Count(); index++)
+        {
+            var currentString = range[index];
+
+            bool isNum = regex.IsMatch(currentString);
+            if (isNum)
+            {
+                double number = double.Parse(currentString);
+                numbers[index] = number;
+            }
+        }
+
+        return numbers;
+    }
+
+    public static double Addition(double firstNum, double secondNum)
+    {
+        double sum = firstNum + secondNum;
+        return sum;
+    }
+
+    public static double Subtraction(double firstNum, double secondNum)
+    {
+        double sum = firstNum - secondNum;
+        return sum;
+    }
+
+    public static double Multiplication(double firstNum, double secondNum)
+    {
+        double sum = firstNum * secondNum;
+        return sum;
+    }
+
+    public static double Division(double firstNum, double secondNum)
+    {
+        double sum = firstNum / secondNum;
+        return sum;
+    }
+
+    public static double Exponentiation(double firstNum, double secondNum)
+    {
+        double sum = Math.Pow(firstNum, secondNum);
+        return sum;
     }
 }
