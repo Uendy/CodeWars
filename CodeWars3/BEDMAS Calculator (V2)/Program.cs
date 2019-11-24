@@ -16,7 +16,6 @@ public class Program
         Console.WriteLine(result);
     }
 
-    
 
     public static string WhiteSpacesFormatting(string input)
     {
@@ -29,12 +28,11 @@ public class Program
 
         return input;
     }
-
     public static string SpaceInput(string input) // get all the parts to be spaced with a single inbetween
     {
         input = WhiteSpacesFormatting(input);
 
-        var operators = new List<char>() { '+', '-', '*', '/', '^', '(', ')' }; 
+        var operators = new List<char>() { '+', '-', '*', '/', '^', '(', ')' };
         var sb = new StringBuilder();
 
 
@@ -70,16 +68,16 @@ public class Program
     }
     public static object ApplyCalculator(string input)
     {
-        double result = 0.0;
-
-
         var inputAsList = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
         var bracketIndex = inputAsList.IndexOf("(");
         while (bracketIndex != -1)
         {
-            var expandedInput = ExpandBrackets(inputAsList);
-            //do check again
+            inputAsList = ExpandBrackets(inputAsList);
+            bracketIndex = inputAsList.IndexOf("(");
         }
+
+        var result = double.Parse(BEDMAS(inputAsList)[0]);
+
         //var numbers = GetNumber(input);
         //var numbersAndIndex = GetNumbersAndIndex(input, numbers);
 
@@ -140,11 +138,8 @@ public class Program
         // make range into a string
 
         //fix the input by removing old and putting in new
-        input.RemoveRange(smallestStartIndex, smallestDifference);
+        input.RemoveRange(smallestStartIndex, smallestDifference + 1);
         input.InsertRange(smallestStartIndex, newRange);
-        
-        
-
 
         //return range;
         //find the range and remove it
@@ -156,14 +151,15 @@ public class Program
 
     public static List<string> BEDMAS(List<string> range)
     {
-        var outPut = new List<string>();
+        //var outPut = new List<string>();
 
         var numbers = GetNumbers(range);
         var operators = GetOperators(range);
 
-        var result = EDMAS(numbers, operators);
+        var result = new List<string> { EDMAS(numbers, operators).ToString() };
+        return result;
 
-        return outPut;
+        //return outPut;
     }
 
     public static double EDMAS(Dictionary<int, double> numbers, Dictionary<int, string> operators)
@@ -222,23 +218,31 @@ public class Program
             if (rightOperator)
             {
                 indexOfOperator = key;
+                operators.Remove(indexOfOperator);
                 break;
             }
         }
 
         //Find the closest smaller than indexOfOp key in nums = the first Num (before operator)
+        int indexOfFirstNum = int.MinValue;
         double firstNum = double.MinValue;
-        foreach (var key in numbers.Keys.Where(key => key < indexOfOperator)) 
+        foreach (var key in numbers.Keys.Where(key => key < indexOfOperator))
         {
             firstNum = numbers[key];
+            indexOfFirstNum = key; // to insert the result back into numbers
         }
 
+        numbers.Remove(indexOfFirstNum);
+
         //Find the closest bigget than indexOfOp key in nums = the second num (after operator)
+        int indexOfSecondNum = int.MinValue;
         double secondNum = double.MinValue;
         foreach (var key in numbers.Keys.Where(key => key > indexOfOperator))
         {
             secondNum = numbers[key];
+            indexOfSecondNum = key;
         }
+        numbers.Remove(indexOfSecondNum);
 
         double resultNum = 0;
 
@@ -267,10 +271,13 @@ public class Program
                 break;
         }
 
-        //operators.Remove(symbol); // replace the past expression of num1 ^ num2 with the result
-        //numbers.RemoveAt(indexOfExponent);
-        //numbers.RemoveAt(indexOfExponent);
-        //numbers.Insert(indexOfExponent, resultNum);
+        //Inset the result in the place of the now removed 2 numbers and operator
+        if (operators.Keys.Count() == 1) // there was a negative inbetween the two 
+        {
+            operators.Clear();
+            resultNum = 0 - resultNum;
+        }
+        numbers[indexOfFirstNum] = resultNum;
     }
 
     public static Dictionary<int, string> GetOperators(List<string> range)
@@ -293,11 +300,11 @@ public class Program
         return operators;
     }
 
-    public static Dictionary<int, double>GetNumbers(List<string> range)
+    public static Dictionary<int, double> GetNumbers(List<string> range)
     {
         var numbers = new Dictionary<int, double>(); // key = index, value = the number
 
-        string regexPattern = @"\d+(\.\d+)?"; 
+        string regexPattern = @"\d+(\.\d+)?";
         var regex = new Regex(regexPattern);
 
         for (int index = 0; index < range.Count(); index++)
