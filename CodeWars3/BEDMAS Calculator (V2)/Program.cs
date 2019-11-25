@@ -223,6 +223,18 @@ public class Program
             }
         }
 
+        //if both operators are -- make them into a plus
+        bool twoMinuses = symbol == "-" && operators[indexOfOperator + 2] == "-";
+        if (twoMinuses)
+        {
+            //Remove both minuses
+            operators.Remove(indexOfOperator + 2);
+
+
+            //Add the plus
+            operators[indexOfOperator] = "+";
+        }
+
         //Find the closest smaller than indexOfOp key in nums = the first Num (before operator)
         int indexOfFirstNum = int.MinValue;
         double firstNum = double.MinValue;
@@ -233,6 +245,11 @@ public class Program
         }
 
         numbers.Remove(indexOfFirstNum);
+
+        if (firstNum == double.MinValue) // there is only a single numbers (secondNum) -> to be able to operate we must make firstNum 0
+        {
+            firstNum = 0;
+        }
 
         //Find the closest bigget than indexOfOp key in nums = the second num (after operator)
         int indexOfSecondNum = int.MinValue;
