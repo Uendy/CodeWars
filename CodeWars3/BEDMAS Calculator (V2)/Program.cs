@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 public class Program
-{
+{   //TODO: double negative into a plus and expand brackets with a minus
     public static void Main()
     {
         string input = Console.ReadLine();
@@ -90,7 +90,7 @@ public class Program
         return result;
     }
 
-    public static List<string> ExpandBrackets(List<string> input)
+    public static List<string> ExpandBrackets(List<string> input) //TODO: if there is a negative infront of brackets
     {
         //Find all ranges and gets the smallest one, the shortest distance from "(" to ")" and starts with it
         var indexOfStartBrackets = new List<int>(); // get all the '(' by index
