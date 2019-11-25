@@ -271,12 +271,19 @@ public class Program
                 break;
         }
 
-        //Inset the result in the place of the now removed 2 numbers and operator
-        if (operators.Keys.Count() == 1) // there was a negative inbetween the two 
+        // see if between the indexs of the firstNum and secondNum, there is a nother operator, if so its a negative -> make the result negative
+        for (int index = indexOfFirstNum; index <= indexOfSecondNum; index++)
         {
-            operators.Clear();
-            resultNum = 0 - resultNum;
+            if(operators.ContainsKey(index))
+            {
+                operators.Clear();
+                resultNum = 0 - resultNum;
+                break;
+            }
+
         }
+
+        //Inset the result in the place of the now removed 2 numbers and operator
         numbers[indexOfFirstNum] = resultNum;
     }
 
