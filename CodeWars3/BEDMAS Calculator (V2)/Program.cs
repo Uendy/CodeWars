@@ -218,22 +218,30 @@ public class Program
             if (rightOperator)
             {
                 indexOfOperator = key;
-                operators.Remove(indexOfOperator);
                 break;
             }
         }
 
         //if both operators are -- make them into a plus
-        bool twoMinuses = symbol == "-" && operators[indexOfOperator + 2] == "-";
-        if (twoMinuses)
+        bool secondOperator = operators.ContainsKey(indexOfOperator + 1);
+        if (secondOperator)
         {
-            //Remove both minuses
-            operators.Remove(indexOfOperator + 2);
+            bool twoMinuses = symbol == "-" && operators[indexOfOperator + 1] == "-";
+            if (twoMinuses)
+            {
+                //Remove both minuses
+                operators.Remove(indexOfOperator + 2);
 
 
-            //Add the plus
-            operators[indexOfOperator] = "+";
+                //change minus to plus
+                symbol = "+";
+
+                //Add the plus
+                //operators[indexOfOperator] = "+";
+            }
         }
+
+        operators.Remove(indexOfOperator);
 
         //Find the closest smaller than indexOfOp key in nums = the first Num (before operator)
         int indexOfFirstNum = int.MinValue;
