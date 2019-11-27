@@ -34,7 +34,7 @@ public class Program
 
         var operators = new List<char>() { '+', '-', '*', '/', '^', '(', ')' };
         var sb = new StringBuilder();
-
+        sb.Append("0 + ");
 
         var inputAsArray = input.ToCharArray();
         for (int index = 0; index < inputAsArray.Count(); index++)
@@ -222,26 +222,7 @@ public class Program
             }
         }
 
-        //if both operators are -- make them into a plus
-        bool secondOperator = operators.ContainsKey(indexOfOperator + 1);
-        if (secondOperator)
-        {
-            bool twoMinuses = symbol == "-" && operators[indexOfOperator + 1] == "-";
-            if (twoMinuses)
-            {
-                //Remove both minuses
-                operators.Remove(indexOfOperator + 2);
-
-
-                //change minus to plus
-                symbol = "+";
-
-                //Add the plus
-                //operators[indexOfOperator] = "+";
-            }
-        }
-
-        operators.Remove(indexOfOperator);
+        
 
         //Find the closest smaller than indexOfOp key in nums = the first Num (before operator)
         int indexOfFirstNum = int.MinValue;
@@ -269,6 +250,33 @@ public class Program
         }
         numbers.Remove(indexOfSecondNum);
 
+        //if both operators are -- make them into a plus
+        bool secondOperator = operators.ContainsKey(indexOfOperator + 1);
+        if (secondOperator)
+        {
+            bool twoMinuses = symbol == "-" && operators[indexOfOperator + 1] == "-";
+            if (twoMinuses)
+            {
+                //Remove both minuses
+                operators.Remove(indexOfOperator + 1);
+
+
+                //change minus to plus
+                symbol = "+";
+
+                //Add the plus
+                //operators[indexOfOperator] = "+";
+            }
+
+            bool stillSecondOperator = operators.ContainsKey(indexOfOperator + 1);
+            if (stillSecondOperator)
+            {
+                secondNum = 0 - secondNum;
+                operators.Remove(indexOfOperator + 1);
+            }
+        }
+
+        operators.Remove(indexOfOperator);
         double resultNum = 0;
 
         switch (symbol)
