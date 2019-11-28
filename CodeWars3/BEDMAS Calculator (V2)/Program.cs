@@ -238,6 +238,7 @@ public class Program
         if (firstNum == double.MinValue) // there is only a single numbers (secondNum) -> to be able to operate we must make firstNum 0
         {
             firstNum = 0;
+            indexOfFirstNum = 0;
         }
 
         //Find the closest bigget than indexOfOp key in nums = the second num (after operator)
@@ -247,6 +248,7 @@ public class Program
         {
             secondNum = numbers[key];
             indexOfSecondNum = key;
+            break;
         }
         numbers.Remove(indexOfSecondNum);
 
@@ -304,7 +306,7 @@ public class Program
                 break;
         }
 
-        // see if between the indexs of the firstNum and secondNum, there is a nother operator, if so its a negative -> make the result negative
+        // see if between the indexs of the firstNum and secondNum, there is another operator, if so its a negative -> make the result negative
         for (int index = indexOfFirstNum; index <= indexOfSecondNum; index++)
         {
             if(operators.ContainsKey(index))
