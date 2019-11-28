@@ -34,7 +34,7 @@ public class Program
 
         var operators = new List<char>() { '+', '-', '*', '/', '^', '(', ')' };
         var sb = new StringBuilder();
-        sb.Append("0 + ");
+        //sb.Append("0 + ");
 
         var inputAsArray = input.ToCharArray();
         for (int index = 0; index < inputAsArray.Count(); index++)
@@ -66,7 +66,7 @@ public class Program
         result = WhiteSpacesFormatting(result);
         return result;
     }
-    public static object ApplyCalculator(string input)
+    public static double ApplyCalculator(string input)
     {
         var inputAsList = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
         var bracketIndex = inputAsList.IndexOf("(");
@@ -77,15 +77,6 @@ public class Program
         }
 
         var result = double.Parse(BEDMAS(inputAsList)[0]);
-
-        //var numbers = GetNumber(input);
-        //var numbersAndIndex = GetNumbersAndIndex(input, numbers);
-
-
-        //get the brackets clear
-        //find nums and ops
-        //do the operations
-        //do the same with cleared brackets
 
         return result;
     }
@@ -205,11 +196,22 @@ public class Program
             containsSubtraction = operators.Values.Contains("-");
         }
 
-        return numbers[0];
+        return numbers.Values.First();
     }
 
     public static void ShortenExpression(Dictionary<int, double> numbers, Dictionary<int, string> operators, string symbol) // allows me to not copy paste code for each operator: removing the 2 addends and the operator 
     {
+        bool leadingMinus = operators.ContainsKey(0); // first number is negative
+        if (leadingMinus)
+        {
+            foreach (var key in numbers.Keys)
+            {
+                numbers[key] = 0 - numbers[key];
+                break;
+            }
+            operators.Remove(0);
+        }
+
         //find the first occurance of the symbol in the operator dict (values) 
         int indexOfOperator = -1;
         foreach (var key in operators.Keys)
@@ -265,9 +267,6 @@ public class Program
 
                 //change minus to plus
                 symbol = "+";
-
-                //Add the plus
-                //operators[indexOfOperator] = "+";
             }
 
             bool stillSecondOperator = operators.ContainsKey(indexOfOperator + 1);
