@@ -1,0 +1,7 @@
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\BEDMAS CALCULATOR (V3)\bin\Debug\BEDMAS CALCULATOR (V3).exe.config
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\BEDMAS CALCULATOR (V3)\bin\Debug\BEDMAS CALCULATOR (V3).exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\BEDMAS CALCULATOR (V3)\bin\Debug\BEDMAS CALCULATOR (V3).pdb
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\BEDMAS CALCULATOR (V3)\obj\Debug\BEDMAS CALCULATOR (V3).csprojAssemblyReference.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\BEDMAS CALCULATOR (V3)\obj\Debug\BEDMAS CALCULATOR (V3).csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\BEDMAS CALCULATOR (V3)\obj\Debug\BEDMAS CALCULATOR (V3).exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\BEDMAS CALCULATOR (V3)\obj\Debug\BEDMAS CALCULATOR (V3).pdb
