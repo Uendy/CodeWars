@@ -9,6 +9,8 @@ public class Program
     {
         string input = Console.ReadLine();
         var list = GetElements(input);
+
+        var result = ApplyCalculator(list);
     }
 
     public static List<string> GetElements(string input) // returns all operators and numbers into a list with correct order
@@ -52,9 +54,13 @@ public class Program
 
         }
 
-
-        list.Select(x => x.Trim()); // removes any excess white spaces and all white spaces in general
+        // removes any excess white spaces and all white spaces in general
+        list = list.Select(x => x.Trim()).Where(x => x != " ").Where(y => y != "").ToList(); 
 
         return list;
+    }
+    public static double ApplyCalculator(List<string> list)
+    {
+        
     }
 }
