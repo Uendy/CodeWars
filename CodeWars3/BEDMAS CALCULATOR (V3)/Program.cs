@@ -123,7 +123,7 @@ public class Program
     public static double EDMAS(List<string> range)
     {
         //so as to keep any leading minuses in tact
-        range.Insert(0, "+"); 
+        //range.Insert(0, "+"); 
         range.Insert(0, "0");
 
         var operators = new List<string>() { "^", "/", "*", "-", "+" };
