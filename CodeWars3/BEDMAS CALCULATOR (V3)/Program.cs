@@ -71,6 +71,7 @@ public class Program
         while (indexOfStart != -1)
         {
             startBrackets.Add(indexOfStart);
+            indexOfStart = list.IndexOf("(", indexOfStart + 1);
         }
 
         //get all the ")"
@@ -79,6 +80,7 @@ public class Program
         while (indexOfEnd != -1)
         {
             endBrackets.Add(indexOfEnd);
+            indexOfEnd = list.IndexOf(")", indexOfEnd + 1);
         }
 
         //find the innerMost Brackets and start from there
@@ -102,12 +104,12 @@ public class Program
                 }
             }
 
-            var range = list.GetRange(indexOfStart, shortestDistance);
+            var range = list.GetRange(indexOfStart + 1, shortestDistance-1);
             var result = EDMAS(range);
 
             //remove the past range with the result
             list.RemoveRange(indexOfStart, shortestDistance);
-            list.Insert(indexOfStart, result);
+            list.Insert(indexOfStart, result.ToString());
         }
 
         return list;
@@ -126,40 +128,62 @@ public class Program
 
         var operators = new List<string>() { "^", "/", "*", "-", "+" };
 
-        bool containsPower = range.Contains("^");
-        while (containsPower)
+        foreach (var op in operators) // check each op in order
         {
-            int indexOfPower = range.IndexOf("^");
-
-            double firstNum = double.Parse(range[indexOfPower - 1]);
-            double secondNum = GetSecondNum(range, indexOfPower);
-
-            double result = Math.Pow(firstNum, secondNum);
-
-            bool secondNumNegative = 0 > secondNum;
-            if (secondNumNegative)
+            bool containsOp = range.Contains(op);
+            while (containsOp) //get all the ops before moving on to the next op
             {
-                range.RemoveAt(indexOfPower + 1);
+                int indexOfOp = range.IndexOf(op);
+
+                double firstNum = double.Parse(range[indexOfOp - 1]);
+                double secondNum = GetSecondNum(range, indexOfOp);
+
+                double result = 0;
+
+                switch (op) //execute the math
+                {
+                    case "^":
+                        result = Math.Pow(firstNum, secondNum);
+                        break;
+
+                    case "/":
+                        result = firstNum / secondNum;
+                        break;
+
+                    case "*":
+                        result = firstNum * secondNum;
+                        break;
+
+                    case "-":
+                        result = firstNum - secondNum;
+                        break;
+
+                    case "+":
+                        result = firstNum + secondNum;
+                        break;
+                    
+                    default:
+                        break;
+                }
+
+                //if the second is negative, must all remove the minus between the op and num2
+                bool secondNumNegative = 0 > secondNum;
+                if (secondNumNegative)
+                {
+                    range.RemoveAt(indexOfOp + 1);
+                }
+                range.RemoveAt(indexOfOp + 1);
+                range.RemoveAt(indexOfOp);
+                range.RemoveAt(indexOfOp - 1);
+
+                range.Insert(indexOfOp - 1, result.ToString()); // inserting the result number in place of the range
+
+                containsOp = range.Contains(op);
             }
-            range.RemoveAt(indexOfPower + 1);
-            range.RemoveAt(indexOfPower);
-            range.RemoveAt(indexOfPower - 1);
-
-            range.Insert(indexOfPower - 1, result.ToString());
-
-            containsPower = range.Contains("^");
         }
 
-        bool containsDivision = range.Contains("/");
-        while (containsDivision)
-        {
-            int indexOfDivision = range.IndexOf("/");
-
-            double firstNum = double.Parse(range[indexOfDivision - 1]);
-            double secondNum = GetSecondNum(range, indexOfDivision);
-
-            double result = firstNum / secondNum;
-        }
+        double resultFromRange = double.Parse(range[0]);
+        return resultFromRange;
     }
 
     public static double GetSecondNum(List<string> range, int index)
