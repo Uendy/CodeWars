@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 public class Program
 {
     public static void Main()
@@ -11,8 +10,8 @@ public class Program
         var list = GetElements(input);
         list = ExpandBrackets(list);
 
-
-        //var result = ApplyCalculator(list);
+        double result = EDMAS(list);
+        Console.WriteLine(result);
     }
 
     
@@ -89,7 +88,7 @@ public class Program
         {
 
             int shortestDistance = int.MaxValue;
-            int indexToStart = 0;
+            //int indexToStart = 0;
 
             foreach (var startIndex in startBrackets)
             {
@@ -100,6 +99,7 @@ public class Program
                     {
                         shortestDistance = distance;
                         indexOfStart = startIndex;
+
                     }
                 }
             }
@@ -108,25 +108,27 @@ public class Program
             var result = EDMAS(range);
 
             //remove the past range with the result
-            list.RemoveRange(indexOfStart, shortestDistance);
+            list.RemoveRange(indexOfStart, shortestDistance + 1);
             list.Insert(indexOfStart, result.ToString());
+
+            startBrackets.Remove(indexOfStart);
+            endBrackets.Remove(indexOfStart + shortestDistance);
         }
 
         return list;
     }
-
-
-    //public static double ApplyCalculator(List<string> list)
-    //{
-
-    //}
     public static double EDMAS(List<string> range)
     {
         //so as to keep any leading minuses in tact
-        //range.Insert(0, "+"); 
-        range.Insert(0, "0");
+        bool onlyTwoElements = range.Count == 2;
+        if (onlyTwoElements)
+        {
+            double num = 0 - double.Parse(range[1]);
+            return num;
+        }
 
-        var operators = new List<string>() { "^", "/", "*", "-", "+" };
+
+        var operators = new List<string>() { "^", "/", "*", "+","-" };
 
         foreach (var op in operators) // check each op in order
         {
@@ -166,17 +168,14 @@ public class Program
                         break;
                 }
 
-                //if the second is negative, must all remove the minus between the op and num2
-                bool secondNumNegative = 0 > secondNum;
-                if (secondNumNegative)
-                {
-                    range.RemoveAt(indexOfOp + 1);
-                }
-                range.RemoveAt(indexOfOp + 1);
-                range.RemoveAt(indexOfOp);
-                range.RemoveAt(indexOfOp - 1);
+                //remove previous range and insert new num
+                int indexOfFirstNum = range.IndexOf(firstNum.ToString());
+                int indexOfSecondNum = range.IndexOf(Math.Abs(secondNum).ToString(), indexOfFirstNum + 1);
+                int distance = indexOfSecondNum - indexOfFirstNum;
 
-                range.Insert(indexOfOp - 1, result.ToString()); // inserting the result number in place of the range
+                range.RemoveRange(indexOfFirstNum, distance + 1);
+
+                range.Insert(indexOfOp - 1, result.ToString()); 
 
                 containsOp = range.Contains(op);
             }
