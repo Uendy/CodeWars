@@ -14,7 +14,7 @@ public class Program
         Console.WriteLine(result);
     }
 
-    
+
 
     public static List<string> GetElements(string input) // returns all operators and numbers into a list with correct order
     {
@@ -38,14 +38,14 @@ public class Program
                 list.Add(nextNum);
                 sb.Clear(); // what if it ends in )
 
-                
+
 
                 list.Add(currentChar);
             }
             else
             {
                 sb.Append(currentChar);
-                
+
                 //adding last num to to list
                 bool lastIndex = index == inputAsArray.Count() - 1;
                 if (lastIndex)
@@ -58,44 +58,42 @@ public class Program
         }
 
         // removes any excess white spaces and all white spaces in general
-        list = list.Select(x => x.Trim()).Where(x => x != " ").Where(y => y != "").ToList(); 
+        list = list.Select(x => x.Trim()).Where(x => x != " ").Where(y => y != "").ToList();
 
         return list;
     }
     public static List<string> ExpandBrackets(List<string> list)
     {
-        //get all the "("
-        var startBrackets = new List<int>();
-        int indexOfStart = list.IndexOf("(");
-        while (indexOfStart != -1)
+        bool containsBracket = list.Contains("(");
+        while (containsBracket)
         {
-            startBrackets.Add(indexOfStart);
-            indexOfStart = list.IndexOf("(", indexOfStart + 1);
-        }
+            //get all the "("
+            var startBrackets = new List<int>();
+            int indexOfStart = list.IndexOf("(");
+            while (indexOfStart != -1)
+            {
+                startBrackets.Add(indexOfStart);
+                indexOfStart = list.IndexOf("(", indexOfStart + 1);
+            }
 
-        //get all the ")"
-        var endBrackets = new List<int>();
-        int indexOfEnd = list.IndexOf(")");
-        while (indexOfEnd != -1)
-        {
-            endBrackets.Add(indexOfEnd);
-            indexOfEnd = list.IndexOf(")", indexOfEnd + 1);
-        }
-
-        //find the innerMost Brackets and start from there
-
-        while (startBrackets.Count() != 0)
-        {
-
+            //get all the ")"
+            var endBrackets = new List<int>();
+            int indexOfEnd = list.IndexOf(")");
+            while (indexOfEnd != -1)
+            {
+                endBrackets.Add(indexOfEnd);
+                indexOfEnd = list.IndexOf(")", indexOfEnd + 1);
+            }
             int shortestDistance = int.MaxValue;
-            //int indexToStart = 0;
 
+            //find the innerMost Brackets and start from there
             foreach (var startIndex in startBrackets)
             {
                 foreach (var endIndex in endBrackets)
                 {
                     int distance = endIndex - startIndex;
                     bool newShorterDistance = shortestDistance > distance;
+                    if (newShorterDistance)
                     {
                         shortestDistance = distance;
                         indexOfStart = startIndex;
@@ -104,7 +102,7 @@ public class Program
                 }
             }
 
-            var range = list.GetRange(indexOfStart + 1, shortestDistance-1);
+            var range = list.GetRange(indexOfStart + 1, shortestDistance - 1);
             var result = EDMAS(range);
 
             //remove the past range with the result
@@ -120,8 +118,8 @@ public class Program
             {
                 list.Insert(indexOfStart, result.ToString());
             }
-            startBrackets.Remove(indexOfStart);
-            endBrackets.Remove(indexOfStart + shortestDistance);
+
+            containsBracket = list.Contains("(");
         }
 
         return list;
@@ -134,7 +132,7 @@ public class Program
             range.Insert(0, "0");
         }
 
-        var operators = new List<string>() { "^", "/", "*", "+","-" };
+        var operators = new List<string>() { "^", "/", "*", "+", "-" };
 
         foreach (var op in operators) // check each op in order
         {
@@ -169,7 +167,7 @@ public class Program
                     case "+":
                         result = firstNum + secondNum;
                         break;
-                    
+
                     default:
                         break;
                 }
