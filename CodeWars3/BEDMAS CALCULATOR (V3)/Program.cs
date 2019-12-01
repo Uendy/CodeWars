@@ -128,13 +128,6 @@ public class Program
     }
     public static double EDMAS(List<string> range)
     {
-        //so as to keep any leading minuses in tact
-        //bool onlyTwoElements = range.Count == 2;
-        //if (onlyTwoElements)
-        //{
-        //    double num = 0 - double.Parse(range[1]);
-        //    return num;
-        //}
         bool beginsWithMinus = range[0] == "-";
         if (beginsWithMinus)
         {
@@ -182,7 +175,7 @@ public class Program
                 }
 
                 //remove previous range and insert new num
-                int indexOfFirstNum = range.IndexOf(firstNum.ToString());
+                int indexOfFirstNum = indexOfOp - 1;
                 int indexOfSecondNum = range.IndexOf(Math.Abs(secondNum).ToString(), indexOfFirstNum + 1);
                 int distance = indexOfSecondNum - indexOfFirstNum;
 
