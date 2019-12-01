@@ -109,8 +109,17 @@ public class Program
 
             //remove the past range with the result
             list.RemoveRange(indexOfStart, shortestDistance + 1);
-            list.Insert(indexOfStart, result.ToString());
 
+            bool resultIsNegative = 0 > result; // to seperate the minus op from the number
+            if (resultIsNegative)
+            {
+                list.Insert(indexOfStart, "-");
+                list.Insert(indexOfStart, Math.Abs(result).ToString());
+            }
+            else
+            {
+                list.Insert(indexOfStart, result.ToString());
+            }
             startBrackets.Remove(indexOfStart);
             endBrackets.Remove(indexOfStart + shortestDistance);
         }
@@ -120,13 +129,17 @@ public class Program
     public static double EDMAS(List<string> range)
     {
         //so as to keep any leading minuses in tact
-        bool onlyTwoElements = range.Count == 2;
-        if (onlyTwoElements)
+        //bool onlyTwoElements = range.Count == 2;
+        //if (onlyTwoElements)
+        //{
+        //    double num = 0 - double.Parse(range[1]);
+        //    return num;
+        //}
+        bool beginsWithMinus = range[0] == "-";
+        if (beginsWithMinus)
         {
-            double num = 0 - double.Parse(range[1]);
-            return num;
+            range.Insert(0, "0");
         }
-
 
         var operators = new List<string>() { "^", "/", "*", "+","-" };
 
@@ -175,8 +188,23 @@ public class Program
 
                 range.RemoveRange(indexOfFirstNum, distance + 1);
 
-                range.Insert(indexOfOp - 1, result.ToString()); 
-
+                bool negativeNum = result < 0;
+                if (negativeNum)
+                {
+                    if (range.Count() == 0)
+                    {
+                        range.Insert(indexOfOp - 1, result.ToString());
+                    }
+                    else
+                    {
+                        range.Insert(indexOfOp - 1, "-");
+                        range.Insert(indexOfOp, Math.Abs(result).ToString());
+                    }
+                }
+                else
+                {
+                    range.Insert(indexOfOp - 1, result.ToString());
+                }
                 containsOp = range.Contains(op);
             }
         }
