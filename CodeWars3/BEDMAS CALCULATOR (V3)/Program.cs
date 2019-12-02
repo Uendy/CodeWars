@@ -60,6 +60,7 @@ public class Program
     }
     public static List<string> ExpandBrackets(List<string> list)
     {
+        //TODO Redo this and all will be good
         bool containsBracket = list.Contains("(");
         while (containsBracket)
         {
@@ -104,15 +105,23 @@ public class Program
             //remove the past range with the result
             list.RemoveRange(indexOfStart, shortestDistance + 1);
 
+            //minus infront of brackets -> make result negative and remove leading minus
+            bool minusInfrontOfBrackets = list[indexOfStart - 1] == "-";
+            if (minusInfrontOfBrackets)
+            {
+                list.RemoveAt(indexOfStart - 1);
+                result = 0 - result;
+            }
+
             bool resultIsNegative = 0 > result; // to seperate the minus op from the number
             if (resultIsNegative)
             {
-                list.Insert(indexOfStart, Math.Abs(result).ToString());
-                list.Insert(indexOfStart, "-");
+                list.Insert(indexOfStart - 1, Math.Abs(result).ToString());
+                list.Insert(indexOfStart - 1, "-");
             }
             else
             {
-                list.Insert(indexOfStart, result.ToString());
+                list.Insert(indexOfStart - 1, result.ToString());
             }
 
             containsBracket = list.Contains("(");
