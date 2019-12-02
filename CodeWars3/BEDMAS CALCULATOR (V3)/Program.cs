@@ -14,8 +14,6 @@ public class Program
         Console.WriteLine(result);
     }
 
-
-
     public static List<string> GetElements(string input) // returns all operators and numbers into a list with correct order
     {
         var list = new List<string>();
@@ -37,8 +35,6 @@ public class Program
                 var nextNum = sb.ToString();
                 list.Add(nextNum);
                 sb.Clear(); // what if it ends in )
-
-
 
                 list.Add(currentChar);
             }
@@ -126,12 +122,6 @@ public class Program
     }
     public static double EDMAS(List<string> range)
     {
-        bool beginsWithMinus = range[0] == "-";
-        if (beginsWithMinus)
-        {
-            range.Insert(0, "0");
-        }
-
         var operators = new List<string>() { "^", "/", "*", "+", "-" };
 
         foreach (var op in operators) // check each op in order
@@ -139,10 +129,16 @@ public class Program
             bool containsOp = range.Contains(op);
             while (containsOp) //get all the ops before moving on to the next op
             {
+                range = GetNegativeNumbers(range, operators); // get all the negative nums 
+
                 int indexOfOp = range.IndexOf(op);
 
-                double firstNum = double.Parse(range[indexOfOp - 1]);
-                double secondNum = GetSecondNum(range, indexOfOp);
+                int indexOfFirstNum = indexOfOp - 1;
+                int indexOfSecondNum = indexOfOp + 1;
+                int distance = indexOfSecondNum - indexOfFirstNum;
+
+                double firstNum = double.Parse(range[indexOfFirstNum]);
+                double secondNum = double.Parse(range[indexOfSecondNum]);
 
                 double result = 0;
 
@@ -173,18 +169,15 @@ public class Program
                 }
 
                 //remove previous range and insert new num
-                int indexOfFirstNum = indexOfOp - 1;
-                int indexOfSecondNum = range.IndexOf(Math.Abs(secondNum).ToString(), indexOfFirstNum + 1);
-                int distance = indexOfSecondNum - indexOfFirstNum;
-
                 range.RemoveRange(indexOfFirstNum, distance + 1);
 
+                //range.Insert(indexOfFirstNum, result.ToString());
                 bool negativeNum = result < 0;
                 if (negativeNum)
                 {
-                    if (range.Count() == 0)
+                    if (range.Count() == 0) // as it inserts it properly and dosent, seperate the minus giving an infinite loop of containing minus operator
                     {
-                        range.Insert(indexOfOp - 1, result.ToString());
+                        range.Insert(0, result.ToString());
                     }
                     else
                     {
@@ -204,22 +197,30 @@ public class Program
         return resultFromRange;
     }
 
-    public static double GetSecondNum(List<string> range, int index)
+    public static List<string> GetNegativeNumbers(List<string> range, List<string> operators)
     {
-        bool isNumber = double.TryParse(range[index + 1], out double num);
-        if (isNumber)
+        bool leadingMinus = range[0] == "-"; // starts with - -> firstNum is negative
+        if (leadingMinus)
         {
-            return num;
+            range[1] = (0 - double.Parse(range[1])).ToString();
+            range.RemoveAt(0);
         }
-        else
+
+        for (int index = 1; index < range.Count(); index++)
         {
-            bool foundNegativeNumber = range[index + 1] == "-";
-            if (foundNegativeNumber)
+            var currentElement = range[index];
+            bool currentMinus = currentElement == "-";
+            if (currentMinus)
             {
-                num = double.Parse(range[index + 2]);
-                num = 0 - num;
+                bool previousElementIsOperator = operators.Contains(range[index - 1]); // as if its a number then the - is an operator
+                if (previousElementIsOperator)
+                {
+                    range[index + 1] = (0 - double.Parse(range[index + 1])).ToString();
+                    range.RemoveAt(index);
+                }
             }
-            return num;
         }
+
+        return range;
     }
 }
