@@ -107,8 +107,8 @@ public class Program
             bool resultIsNegative = 0 > result; // to seperate the minus op from the number
             if (resultIsNegative)
             {
-                list.Insert(indexOfStart, "-");
                 list.Insert(indexOfStart, Math.Abs(result).ToString());
+                list.Insert(indexOfStart, "-");
             }
             else
             {
