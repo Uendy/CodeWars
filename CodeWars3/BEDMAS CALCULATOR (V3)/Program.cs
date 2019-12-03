@@ -84,12 +84,12 @@ public class Program
             int shortestDistance = int.MaxValue;
 
             //find the innerMost Brackets and start from there
-            foreach (var startIndex in startBrackets)
+            foreach (var startIndex in startBrackets) //Problem: (1 - 2) + -(-(-(-4))) it takes the first ")" and from its index takes away the last "("
             {
                 foreach (var endIndex in endBrackets)
                 {
                     int distance = endIndex - startIndex;
-                    bool newShorterDistance = shortestDistance > distance;
+                    bool newShorterDistance = shortestDistance > distance && distance > 0;
                     if (newShorterDistance)
                     {
                         shortestDistance = distance;
@@ -104,6 +104,12 @@ public class Program
 
             //remove the past range with the result
             list.RemoveRange(indexOfStart, shortestDistance + 1);
+
+            
+            if (indexOfStart <= 0)
+            {
+                indexOfStart = 1;
+            }
 
             //minus infront of brackets -> make result negative and remove leading minus
             bool minusInfrontOfBrackets = list[indexOfStart - 1] == "-";
@@ -140,7 +146,7 @@ public class Program
             {
                 range = GetNegativeNumbers(range, operators); // get all the negative nums 
 
-                if (range.Count() == 1)
+                if (range.Count() == 1) // return the only number
                 {
                     return double.Parse(range[0]);
                 }
