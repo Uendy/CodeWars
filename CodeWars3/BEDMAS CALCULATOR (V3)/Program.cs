@@ -140,6 +140,11 @@ public class Program
             {
                 range = GetNegativeNumbers(range, operators); // get all the negative nums 
 
+                if (range.Count() == 1)
+                {
+                    return double.Parse(range[0]);
+                }
+
                 int indexOfOp = range.IndexOf(op);
 
                 int indexOfFirstNum = indexOfOp - 1;
