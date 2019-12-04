@@ -6,6 +6,9 @@ public class Program
 {
     public static void Main()
     {
+        //TODO: make all negative numbers negative from the start
+        // and fix the expandBrackets part so that things go in the right places
+
         string input = Console.ReadLine();
         var list = GetElements(input);
         list = ExpandBrackets(list);
@@ -100,34 +103,38 @@ public class Program
             }
 
             var range = list.GetRange(indexOfStart + 1, shortestDistance - 1);
-            var result = EDMAS(range);
-
-            //remove the past range with the result
             list.RemoveRange(indexOfStart, shortestDistance + 1);
 
-            
-            if (indexOfStart <= 0)
+            bool emptyBrackets = range.Count() <= 0;
+            if(!emptyBrackets)
             {
-                indexOfStart = 1;
-            }
+                var result = EDMAS(range);
 
-            //minus infront of brackets -> make result negative and remove leading minus
-            bool minusInfrontOfBrackets = list[indexOfStart - 1] == "-";
-            if (minusInfrontOfBrackets)
-            {
-                list.RemoveAt(indexOfStart - 1);
-                result = 0 - result;
-            }
 
-            bool resultIsNegative = 0 > result; // to seperate the minus op from the number
-            if (resultIsNegative)
-            {
-                list.Insert(indexOfStart - 1, Math.Abs(result).ToString());
-                list.Insert(indexOfStart - 1, "-");
-            }
-            else
-            {
-                list.Insert(indexOfStart - 1, result.ToString());
+
+                if (indexOfStart <= 0)
+                {
+                    indexOfStart = 1;
+                }
+
+                //minus infront of brackets -> make result negative and remove leading minus
+                bool minusInfrontOfBrackets = list[indexOfStart - 1] == "-";
+                if (minusInfrontOfBrackets)
+                {
+                    list.RemoveAt(indexOfStart - 1);
+                    result = 0 - result;
+                }
+
+                bool resultIsNegative = 0 > result; // to seperate the minus op from the number
+                if (resultIsNegative)
+                {
+                    list.Insert(indexOfStart - 1, Math.Abs(result).ToString());
+                    list.Insert(indexOfStart - 1, "-");
+                }
+                else
+                {
+                    list.Insert(indexOfStart - 1, result.ToString());
+                }
             }
 
             containsBracket = list.Contains("(");
