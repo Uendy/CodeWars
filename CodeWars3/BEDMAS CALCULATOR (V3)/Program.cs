@@ -60,8 +60,6 @@ public class Program
         list = list.Select(x => x.Trim()).Where(x => x != " ").Where(y => y != "").ToList();
 
 
-        list = GetNegativeNumbers(list, operators);
-
         return list;
     }
     public static List<string> ExpandBrackets(List<string> list)
@@ -136,7 +134,7 @@ public class Program
                 }
                 else
                 {
-                    list.Insert(indexOfStart - 1, result.ToString());
+                    list.Insert(indexOfStart, result.ToString());
                 }
             }
 
