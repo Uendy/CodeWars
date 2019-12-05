@@ -59,6 +59,9 @@ public class Program
         // removes any excess white spaces and all white spaces in general
         list = list.Select(x => x.Trim()).Where(x => x != " ").Where(y => y != "").ToList();
 
+
+        list = GetNegativeNumbers(list, operators);
+
         return list;
     }
     public static List<string> ExpandBrackets(List<string> list)
