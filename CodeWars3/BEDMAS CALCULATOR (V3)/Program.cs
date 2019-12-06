@@ -218,6 +218,8 @@ public class Program
                     range.Insert(indexOfOp - 1, result.ToString());
                 }
                 containsOp = range.Contains(op);
+
+
             }
         }
 
