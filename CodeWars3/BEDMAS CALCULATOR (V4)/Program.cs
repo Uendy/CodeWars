@@ -85,7 +85,7 @@ public class Program
             int shortestDistance = int.MaxValue;
 
             //find the innerMost Brackets and start from there
-            foreach (var startIndex in startBrackets) //Problem: (1 - 2) + -(-(-(-4))) it takes the first ")" and from its index takes away the last "("
+            foreach (var startIndex in startBrackets) 
             {
                 foreach (var endIndex in endBrackets)
                 {
@@ -108,7 +108,7 @@ public class Program
             {
                 var result = EDMAS(range);
 
-                //Bug: (123.45*(678.90 / (-2.5+ 11.5)-(((80 -(19))) *33.25)) / 20) - (123.45*(678.90 / (-2.5+ 11.5)-(((80 -(19))) *33.25)) / 20) + (13 - 2)/ -(-11)
+                // Bug: (123.45*(678.90 / (-2.5+ 11.5)-(((80 -(19))) *33.25)) / 20) - (123.45*(678.90 / (-2.5+ 11.5)-(((80 -(19))) *33.25)) / 20) + (13 - 2)/ -(-11)
                 // returns -1, when its 1
                 // from -12 - -12 + 1 instead of -12 + 13 = 1 it gives: -12 - -11 = -1
 
@@ -122,6 +122,8 @@ public class Program
     }
     public static double EDMAS(List<string> range)
     {
+        //range = DoubleNegative(range);
+
         var operators = new List<string>() { "^", "/", "*", "-", "+" };
 
         foreach (var op in operators) // check each op in order
@@ -142,7 +144,7 @@ public class Program
                 int indexOfSecondNum = indexOfOp + 1;
                 int distance = indexOfSecondNum - indexOfFirstNum;
 
-                double firstNum = double.Parse(range[indexOfFirstNum]); // bug : 123.45*(678.90 / (-2.5+ 11.5)-(80 -19) *33.25) / 20 + 11
+                double firstNum = double.Parse(range[indexOfFirstNum]); 
                 double secondNum = double.Parse(range[indexOfSecondNum]);
 
                 double result = 0;
@@ -176,7 +178,6 @@ public class Program
                 //remove previous range and insert new num
                 range.RemoveRange(indexOfFirstNum, distance + 1);
 
-                //range.Insert(indexOfFirstNum, result.ToString());
                 bool negativeNum = result < 0;
                 if (negativeNum)
                 {
@@ -225,7 +226,34 @@ public class Program
                 }
             }
         }
+        return range;
+    }
 
+    public static List<string> DoubleNegative(List<string> range) // need to fix this and it will be done
+    {
+        for (int index = 0; index < range.Count() - 1; index++)
+        {
+            string currentElements = range[index];
+            bool nextIsNegative = range[index + 1] == "0";
+            if (nextIsNegative)
+            {
+                range.RemoveRange(index, 1);
+                range.Insert(index, "+");
+            }
+            else
+            {
+                bool nextIsNum = double.TryParse(range[index + 1], out double num);
+                if (nextIsNum)
+                {
+                    bool negativeNum = num < 0;
+                    if (negativeNum)
+                    {
+                        range[index] = "+";
+                        range[index + 1] = Math.Abs(num).ToString();
+                    }
+                }
+            }
+        }
         return range;
     }
 }
