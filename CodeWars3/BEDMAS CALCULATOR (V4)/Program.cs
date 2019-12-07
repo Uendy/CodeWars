@@ -117,32 +117,32 @@ public class Program
                 }
 
                 //minus infront of brackets -> make result negative and remove leading minus
-                bool minusInfrontOfBrackets = list[indexOfStart - 1] == "-";
-                if (minusInfrontOfBrackets)
-                {
-                    list.RemoveAt(indexOfStart - 1);
-                    result = 0 - result;
-                }
+                //bool minusInfrontOfBrackets = list[indexOfStart - 1] == "-";
+                //if (minusInfrontOfBrackets)
+                //{
+                //    list.RemoveAt(indexOfStart - 1);
+                //    result = 0 - result;
+                //}
 
-                bool resultIsNegative = 0 > result; // to seperate the minus op from the number
-                if (resultIsNegative)
-                {
-                    list.Insert(indexOfStart - 1, Math.Abs(result).ToString());
-                    list.Insert(indexOfStart - 1, "-");
-                }
-                else
-                {
-                    var operators = new List<string>() { "^", "/", "*", "-", "+" };
-                    bool wrongStartIndex = operators.Contains(list[indexOfStart - 1]) && operators.Contains(list[indexOfStart]);
-                    if (wrongStartIndex) // 123.45*(678.90 / (-2.5+ 11.5)-(80 -19) *33.25) / 20 + 11 like this gives and error otherwise
-                    {
+                //bool resultIsNegative = 0 > result; // to seperate the minus op from the number
+                //if (resultIsNegative)
+                //{
+                //    list.Insert(indexOfStart, Math.Abs(result).ToString());
+                //    list.Insert(indexOfStart, "-");
+                //}
+                //else
+                //{
+                    //var operators = new List<string>() { "^", "/", "*", "-", "+" };
+                    //bool wrongStartIndex = operators.Contains(list[indexOfStart - 1]) && operators.Contains(list[indexOfStart]);
+                    //if (wrongStartIndex) // 123.45*(678.90 / (-2.5+ 11.5)-(80 -19) *33.25) / 20 + 11 like this gives and error otherwise
+                    //{
+                    //    list.Insert(indexOfStart, result.ToString());
+                    //}
+                    //else
+                    //{
                         list.Insert(indexOfStart, result.ToString());
-                    }
-                    else
-                    {
-                        list.Insert(indexOfStart - 1, result.ToString());
-                    }
-                }
+                    //}
+                //}
             }
 
             containsBracket = list.Contains("(");
@@ -225,8 +225,6 @@ public class Program
                     range.Insert(indexOfOp - 1, result.ToString());
                 }
                 containsOp = range.Contains(op);
-
-
             }
         }
 
