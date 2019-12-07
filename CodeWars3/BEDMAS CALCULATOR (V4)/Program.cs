@@ -111,10 +111,12 @@ public class Program
             {
                 var result = EDMAS(range);
 
-                if (indexOfStart <= 0)
-                {
-                    indexOfStart = 1;
-                }
+                //Bug: (123.45*(678.90 / (-2.5+ 11.5)-(((80 -(19))) *33.25)) / 20) - (123.45*(678.90 / (-2.5+ 11.5)-(((80 -(19))) *33.25)) / 20) + (13 - 2)/ -(-11)
+
+                //if (indexOfStart <= 0)
+                //{
+                //    indexOfStart = 0;
+                //}
 
                 //minus infront of brackets -> make result negative and remove leading minus
                 //bool minusInfrontOfBrackets = list[indexOfStart - 1] == "-";
@@ -132,15 +134,15 @@ public class Program
                 //}
                 //else
                 //{
-                    //var operators = new List<string>() { "^", "/", "*", "-", "+" };
-                    //bool wrongStartIndex = operators.Contains(list[indexOfStart - 1]) && operators.Contains(list[indexOfStart]);
-                    //if (wrongStartIndex) // 123.45*(678.90 / (-2.5+ 11.5)-(80 -19) *33.25) / 20 + 11 like this gives and error otherwise
-                    //{
-                    //    list.Insert(indexOfStart, result.ToString());
-                    //}
-                    //else
-                    //{
-                        list.Insert(indexOfStart, result.ToString());
+                //var operators = new List<string>() { "^", "/", "*", "-", "+" };
+                //bool wrongStartIndex = operators.Contains(list[indexOfStart - 1]) && operators.Contains(list[indexOfStart]);
+                //if (wrongStartIndex) // 123.45*(678.90 / (-2.5+ 11.5)-(80 -19) *33.25) / 20 + 11 like this gives and error otherwise
+                //{
+                //    list.Insert(indexOfStart, result.ToString());
+                //}
+                //else
+                //{
+                list.Insert(indexOfStart, result.ToString());
                     //}
                 //}
             }
