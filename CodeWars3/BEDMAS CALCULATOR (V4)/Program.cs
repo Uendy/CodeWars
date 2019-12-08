@@ -138,6 +138,8 @@ public class Program
                     return double.Parse(range[0]);
                 }
 
+                range = DoubleNegative(range);
+
                 int indexOfOp = range.IndexOf(op);
 
                 int indexOfFirstNum = indexOfOp - 1;
