@@ -132,13 +132,12 @@ public class Program
             while (containsOp) //get all the ops before moving on to the next op
             {
                 range = GetNegativeNumbers(range, operators); // get all the negative nums 
+                range = DoubleNegative(range);
 
                 if (range.Count() == 1) // return the only number
                 {
                     return double.Parse(range[0]);
                 }
-
-                range = DoubleNegative(range);
 
                 int indexOfOp = range.IndexOf(op);
 
@@ -235,25 +234,21 @@ public class Program
     {
         for (int index = 0; index < range.Count() - 1; index++)
         {
-            string currentElements = range[index];
+            //string currentElements = range[index];
             bool nextIsNegative = range[index + 1] == "0";
             if (nextIsNegative)
             {
                 range.RemoveRange(index, 1);
                 range.Insert(index, "+");
             }
-            else
+            else if(double.TryParse(range[index + 1], out double num))
             {
-                bool nextIsNum = double.TryParse(range[index + 1], out double num);
-                if (nextIsNum)
-                {
                     bool negativeNum = num < 0;
                     if (negativeNum)
                     {
                         range[index] = "+";
                         range[index + 1] = Math.Abs(num).ToString();
                     }
-                }
             }
         }
         return range;
