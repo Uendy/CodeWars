@@ -85,7 +85,7 @@ public class Program
             int shortestDistance = int.MaxValue;
 
             //find the innerMost Brackets and start from there
-            foreach (var startIndex in startBrackets) 
+            foreach (var startIndex in startBrackets)
             {
                 foreach (var endIndex in endBrackets)
                 {
@@ -122,7 +122,7 @@ public class Program
     }
     public static double EDMAS(List<string> range)
     {
-        //range = DoubleNegative(range);
+        range = DoubleNegative(range);
 
         var operators = new List<string>() { "^", "/", "*", "-", "+" };
 
@@ -145,7 +145,7 @@ public class Program
                 int indexOfSecondNum = indexOfOp + 1;
                 int distance = indexOfSecondNum - indexOfFirstNum;
 
-                double firstNum = double.Parse(range[indexOfFirstNum]); 
+                double firstNum = double.Parse(range[indexOfFirstNum]);
                 double secondNum = double.Parse(range[indexOfSecondNum]);
 
                 double result = 0;
@@ -230,27 +230,30 @@ public class Program
         return range;
     }
 
-    public static List<string> DoubleNegative(List<string> range) // need to fix this and it will be done
-    {
-        for (int index = 0; index < range.Count() - 1; index++)
-        {
-            //string currentElements = range[index];
-            bool nextIsNegative = range[index + 1] == "0";
-            if (nextIsNegative)
-            {
-                range.RemoveRange(index, 1);
-                range.Insert(index, "+");
-            }
-            else if(double.TryParse(range[index + 1], out double num))
-            {
-                    bool negativeNum = num < 0;
-                    if (negativeNum)
-                    {
-                        range[index] = "+";
-                        range[index + 1] = Math.Abs(num).ToString();
-                    }
-            }
-        }
-        return range;
-    }
+
+    // 1 to take care of - & - 
+    // 1 to take care of - & -num
+    //public static List<string> DoubleNegative(List<string> range) // need to fix this and it will be done
+    //{
+    //    for (int index = 0; index < range.Count() - 1; index++)
+    //    {
+    //        //string currentElements = range[index];
+    //        bool nextIsNegative = range[index + 1] == "-";
+    //        if (nextIsNegative)
+    //        {
+    //            range.RemoveRange(index, 1);
+    //            range.Insert(index, "+");
+    //        }
+    //        else if(double.TryParse(range[index + 1], out double num))
+    //        {
+    //                bool negativeNum = num < 0;
+    //                if (negativeNum)
+    //                {
+    //                    range[index] = "+";
+    //                    range[index + 1] = Math.Abs(num).ToString();
+    //                }
+    //        }
+    //    }
+    //    return range;
+    //}
 }
