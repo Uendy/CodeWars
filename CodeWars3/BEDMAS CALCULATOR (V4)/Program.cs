@@ -122,8 +122,6 @@ public class Program
     }
     public static double EDMAS(List<string> range)
     {
-        range = DoubleNegative(range);
-
         var operators = new List<string>() { "^", "/", "*", "-", "+" };
 
         foreach (var op in operators) // check each op in order
@@ -132,7 +130,7 @@ public class Program
             while (containsOp) //get all the ops before moving on to the next op
             {
                 range = GetNegativeNumbers(range, operators); // get all the negative nums 
-                range = DoubleNegative(range);
+                //range = DoubleNegative(range);
 
                 if (range.Count() == 1) // return the only number
                 {
@@ -230,28 +228,30 @@ public class Program
         return range;
     }
 
-
     // 1 to take care of - & - 
     // 1 to take care of - & -num
     //public static List<string> DoubleNegative(List<string> range) // need to fix this and it will be done
     //{
     //    for (int index = 0; index < range.Count() - 1; index++)
     //    {
-    //        //string currentElements = range[index];
-    //        bool nextIsNegative = range[index + 1] == "-";
-    //        if (nextIsNegative)
+    //        var currentElement = range[index];
+    //        if (currentElement == "-")
     //        {
-    //            range.RemoveRange(index, 1);
-    //            range.Insert(index, "+");
-    //        }
-    //        else if(double.TryParse(range[index + 1], out double num))
-    //        {
-    //                bool negativeNum = num < 0;
-    //                if (negativeNum)
+    //            bool secondMinus = range[index + 1] == "-";
+    //            if (secondMinus)
+    //            {
+    //                range[index] = "+";
+    //                range.RemoveAt(index + 1);
+    //            }
+    //            else if (double.TryParse(range[index + 1], out double num))
+    //            {
+    //                bool negatvie = num < 0;
+    //                if (negatvie)
     //                {
     //                    range[index] = "+";
     //                    range[index + 1] = Math.Abs(num).ToString();
     //                }
+    //            }
     //        }
     //    }
     //    return range;
