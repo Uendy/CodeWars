@@ -217,6 +217,8 @@ public class Program
             bool currentMinus = currentElement == "-";
             if (currentMinus)
             {
+                range = DoubleNegative(range, index);
+
                 bool previousElementIsOperator = operators.Contains(range[index - 1]); // as if its a number then the - is an operator
                 if (previousElementIsOperator)
                 {
@@ -230,30 +232,46 @@ public class Program
 
     // 1 to take care of - & - 
     // 1 to take care of - & -num
-    //public static List<string> DoubleNegative(List<string> range) // need to fix this and it will be done
-    //{
-    //    for (int index = 0; index < range.Count() - 1; index++)
-    //    {
-    //        var currentElement = range[index];
-    //        if (currentElement == "-")
-    //        {
-    //            bool secondMinus = range[index + 1] == "-";
-    //            if (secondMinus)
-    //            {
-    //                range[index] = "+";
-    //                range.RemoveAt(index + 1);
-    //            }
-    //            else if (double.TryParse(range[index + 1], out double num))
-    //            {
-    //                bool negatvie = num < 0;
-    //                if (negatvie)
-    //                {
-    //                    range[index] = "+";
-    //                    range[index + 1] = Math.Abs(num).ToString();
-    //                }
-    //            }
-    //        }
-    //    }
-    //    return range;
-    //}
+    public static List<string> DoubleNegative(List<string> range, int index) // need to fix this and it will be done
+    {
+        if (index != range.Count() - 1)
+        {
+            bool nextElementIsMinus = range[index + 1] == "-";
+            if (nextElementIsMinus)
+            {
+
+                return range;
+            }
+
+            bool nextElementsIsNegative = double.TryParse(range[index + 1], out double num) && num < 0;
+            if (nextElementsIsNegative)
+            {
+                range[index] = "+";
+                range[index + 1] = Math.Abs(num).ToString();
+            }
+        }
+        //for (int index = 0; index < range.Count() - 1; index++)
+        //{
+        //    var currentElement = range[index];
+        //    if (currentElement == "-")
+        //    {
+        //        bool secondMinus = range[index + 1] == "-";
+        //        if (secondMinus)
+        //        {
+        //            range[index] = "+";
+        //            range.RemoveAt(index + 1);
+        //        }
+        //        else if (double.TryParse(range[index + 1], out double num))
+        //        {
+        //            bool negatvie = num < 0;
+        //            if (negatvie)
+        //            {
+        //                range[index] = "+";
+        //                range[index + 1] = Math.Abs(num).ToString();
+        //            }
+        //        }
+        //    }
+        //}
+        return range;
+    }
 }
