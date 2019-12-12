@@ -219,12 +219,12 @@ public class Program
             {
                 range = DoubleNegative(range, index);
 
-                bool previousElementIsOperator = operators.Contains(range[index - 1]); // as if its a number then the - is an operator
-                if (previousElementIsOperator)
-                {
-                    range[index + 1] = (0 - double.Parse(range[index + 1])).ToString();
-                    range.RemoveAt(index);
-                }
+                //bool previousElementIsOperator = operators.Contains(range[index - 1]); // as if its a number then the - is an operator
+                //if (previousElementIsOperator)
+                //{
+                //    range[index + 1] = (0 - double.Parse(range[index + 1])).ToString();
+                //    range.RemoveAt(index);
+                //}
             }
         }
         return range;
@@ -248,7 +248,11 @@ public class Program
             {
                 range[index] = "+";
                 range[index + 1] = Math.Abs(num).ToString();
+                return range;
             }
+
+            range[index] = (0 - num).ToString();
+            range.RemoveAt(index + 1);
         }
         //for (int index = 0; index < range.Count() - 1; index++)
         //{
