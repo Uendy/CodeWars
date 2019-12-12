@@ -217,7 +217,7 @@ public class Program
             bool currentMinus = currentElement == "-";
             if (currentMinus)
             {
-                range = DoubleNegative(range, index);
+                range = DoubleNegative(range, index, operators);
 
                 //bool previousElementIsOperator = operators.Contains(range[index - 1]); // as if its a number then the - is an operator
                 //if (previousElementIsOperator)
@@ -232,7 +232,7 @@ public class Program
 
     // 1 to take care of - & - 
     // 1 to take care of - & -num
-    public static List<string> DoubleNegative(List<string> range, int index) // need to fix this and it will be done
+    public static List<string> DoubleNegative(List<string> range, int index, List<string> operators) // need to fix this and it will be done
     {
         if (index != range.Count() - 1)
         {
@@ -251,8 +251,15 @@ public class Program
                 return range;
             }
 
-            range[index] = (0 - num).ToString();
-            range.RemoveAt(index + 1);
+            bool previousElementIsOperator = operators.Contains(range[index - 1]); // as if its a number then the - is an operator
+            if (previousElementIsOperator)
+            {
+                range[index + 1] = (0 - double.Parse(range[index + 1])).ToString();
+                range.RemoveAt(index);
+            }
+
+            //range[index] = (0 - num).ToString();
+            //range.RemoveAt(index + 1);
         }
         //for (int index = 0; index < range.Count() - 1; index++)
         //{
