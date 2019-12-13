@@ -7,7 +7,7 @@
     <ProjectGuid>{0289A631-4EE0-4AF5-A2E3-3A8FDF00CACD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>BEDMAS_CALCULATOR__Final_</RootNamespace>
-    <AssemblyName>BEDMAS_CALCULATOR__Final_</AssemblyName>
+    <AssemblyName>BEDMAS CALCULATOR %28Final%29</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

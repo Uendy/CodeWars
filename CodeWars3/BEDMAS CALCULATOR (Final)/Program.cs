@@ -6,6 +6,19 @@ public class Program
 {
     public static void Main()
     {
+        Console.WriteLine("Welcome to my calculator");
+
+        Console.WriteLine("You can use any of the following functions:");
+        Console.WriteLine("- Addition (+)");
+        Console.WriteLine("- Subtraction (-)");
+        Console.WriteLine("- Multiplication (*)");
+        Console.WriteLine("- Division (/)");
+        Console.WriteLine("- Exponent (^)");
+
+        Console.WriteLine("You can input and recieve results as decimal numbers aswell");
+
+        Console.Write("Input your function here: ");
+
         string input = Console.ReadLine();
         var list = GetElements(input);
         list = ExpandBrackets(list);
