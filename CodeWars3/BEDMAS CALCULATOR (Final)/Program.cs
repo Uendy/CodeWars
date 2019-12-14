@@ -6,6 +6,8 @@ public class Program
 {
     public static void Main()
     {
+        //Kata address: https://www.codewars.com/kata/56a14b6b56e5917073000022/train/csharp
+
         Console.WriteLine("Welcome to my calculator");
 
         Console.WriteLine("You can use any of the following functions:");
