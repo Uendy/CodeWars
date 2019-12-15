@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BEDMAS CALCULATOR (V4)", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BEDMAS CALCULATOR (Final)", "BEDMAS CALCULATOR (Final)\BEDMAS CALCULATOR (Final).csproj", "{0289A631-4EE0-4AF5-A2E3-3A8FDF00CACD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Square Root", "Square Root\Square Root.csproj", "{D4F012C2-CD74-465E-B319-4BB1E40D9E44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{0289A631-4EE0-4AF5-A2E3-3A8FDF00CACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0289A631-4EE0-4AF5-A2E3-3A8FDF00CACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0289A631-4EE0-4AF5-A2E3-3A8FDF00CACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4F012C2-CD74-465E-B319-4BB1E40D9E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F012C2-CD74-465E-B319-4BB1E40D9E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F012C2-CD74-465E-B319-4BB1E40D9E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F012C2-CD74-465E-B319-4BB1E40D9E44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

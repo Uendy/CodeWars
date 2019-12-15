@@ -7,7 +7,7 @@
     <ProjectGuid>{D4F012C2-CD74-465E-B319-4BB1E40D9E44}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Square_Root</RootNamespace>
-    <AssemblyName>Square_Root</AssemblyName>
+    <AssemblyName>Square Root</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
