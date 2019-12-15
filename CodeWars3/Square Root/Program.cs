@@ -42,8 +42,16 @@ public class Program
             bool overShot = currentNum > input;
             if (overShot)
             {
+                double lastOkayNumber = num - range;
                 range /= 10;
-                double lastOkayNumber = currentNum - range;
+
+                if (range == 0.000001) // bug here: the range is in sci notation
+                {
+                    return (num + lastOkayNumber) / 2;
+                    //Console.WriteLine($"Approximately: {(num + lastOkayNumber) / 2}");
+                    //Environment.Exit(0);
+                }
+
                 FindSquareRoot(input, lastOkayNumber, range);
             }
         }
