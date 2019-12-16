@@ -5,14 +5,15 @@ public class Program
     public static void Main()
     {
         double input = double.Parse(Console.ReadLine());
+
         bool isNegative = input < 0;
+
         input = Math.Abs(input);
 
         double startNum = 0;
         double range = 1;
         
-
-        double root = FindSquareRoot(input, startNum, range);
+        double root = FindSquareRoot(input, isNegative, startNum, range);
 
         if (isNegative)
         {
@@ -21,7 +22,7 @@ public class Program
         Console.WriteLine(root);
     }
 
-    public static double FindSquareRoot(double input, double startNum, double range)
+    public static double FindSquareRoot(double input, bool isNegative, double startNum, double range)
     {
         // nested for cycles where we do [index ^ (power of ) index]
         // until we get to a the input num or a num higher than input num
@@ -50,11 +51,16 @@ public class Program
                 {
                     var approximateAnswer = (num + lastOkayNumber) / 2;
                     approximateAnswer = Math.Round(approximateAnswer, 5);
-                    Console.WriteLine($"Approximately: {approximateAnswer}");
+                    Console.Write($"Approximately: ");
+                    if (isNegative)
+                    {
+                        Console.Write("-");
+                    }
+                    Console.WriteLine($"{approximateAnswer}");
                     Environment.Exit(0);
                 }
 
-                FindSquareRoot(input, lastOkayNumber, range);
+                FindSquareRoot(input, isNegative, lastOkayNumber, range);
             }
         }
     }
