@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 public class Program
 {
     public static void Main()
@@ -22,7 +23,7 @@ public class Program
 
     public static double FindSquareRoot(double input, double startNum, double range)
     {
-        // nestd for cycles where we do [index ^ (power of ) index]
+        // nested for cycles where we do [index ^ (power of ) index]
         // until we get to a the input num or a num higher than input num
         // if higher()
         // go between the last num smaller than input and bigger than input and cycle through with 0.1 bigger precision
@@ -45,11 +46,12 @@ public class Program
                 double lastOkayNumber = num - range;
                 range /= 10;
 
-                if (range == 0.000001) // bug here: the range is in sci notation
+                if (double.Parse(range.ToString(), NumberStyles.Any) == 0.00000001) // converts scientific notation to decimal and compares
                 {
-                    return (num + lastOkayNumber) / 2;
-                    //Console.WriteLine($"Approximately: {(num + lastOkayNumber) / 2}");
-                    //Environment.Exit(0);
+                    var approximateAnswer = (num + lastOkayNumber) / 2;
+                    approximateAnswer = Math.Round(approximateAnswer, 5);
+                    Console.WriteLine($"Approximately: {approximateAnswer}");
+                    Environment.Exit(0);
                 }
 
                 FindSquareRoot(input, lastOkayNumber, range);
