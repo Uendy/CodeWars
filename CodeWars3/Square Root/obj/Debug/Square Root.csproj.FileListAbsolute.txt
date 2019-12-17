@@ -1,0 +1,7 @@
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Square Root\bin\Debug\Square Root.exe.config
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Square Root\bin\Debug\Square Root.exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Square Root\bin\Debug\Square Root.pdb
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Square Root\obj\Debug\Square Root.csprojAssemblyReference.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Square Root\obj\Debug\Square Root.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Square Root\obj\Debug\Square Root.exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Square Root\obj\Debug\Square Root.pdb
