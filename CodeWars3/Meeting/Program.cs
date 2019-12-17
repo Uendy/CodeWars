@@ -19,5 +19,14 @@ public class Program
         //input = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
         //output = "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
 
+        string input = Console.ReadLine();
+        var people = input.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.ToUpper()).ToList();
+
+        var listOfCoworkers = new List<Coworker>();
+
+        foreach (var person in people)
+        {
+            var names = person.Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+        }
     }
 }
