@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 public class Program
 {
     public static void Main()
@@ -27,6 +24,24 @@ public class Program
         foreach (var person in people)
         {
             var names = person.Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+            var currentPerson = new Coworker()
+            {
+                firstName = names[0],
+                lastName = names[1]
+            };
+
+            listOfCoworkers.Add(currentPerson);
         }
+
+        listOfCoworkers = listOfCoworkers.OrderBy(x => x.lastName).ThenBy(x => x.firstName).ToList();
+        var listOfNames = new List<string>();
+        foreach (var worker in listOfCoworkers)
+        {
+            string currentName = $"({worker.lastName}, {worker.firstName})";
+            listOfNames.Add(currentName);
+        }
+
+        string outPut = string.Join("", listOfNames);
+        Console.WriteLine(outPut);
     }
 }
