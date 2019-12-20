@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 public class Program
 {
@@ -32,20 +31,37 @@ public class Program
 
         int capacity = int.Parse(Console.ReadLine());
 
-        var luggage = new Dictionary<int, int>();
-        for (int index = 0; index < scores.Length; index++)
+        int n = scores.Length;
+        int[,] mat = new int[n + 1, capacity + 1];
+
+        for (int r = 0; r <= capacity; r++)
         {
-            luggage[scores[index]] = weights[index];
+            mat[0, r] = 0;
+        }
+        for (int c = 0; c <= n; c++)
+        {
+            mat[c, 0] = 0;
         }
 
-        luggage = luggage.OrderBy(x => x.Key).ThenBy(x => x.Value < capacity).ToDictionary(x => x.Key, y => y.Value);
-
-        var indexOfItems = new List<int>();
-        foreach (var key in luggage.Keys)
+        for (int item = 1; item <= n; item++)
         {
+            for (int cap = 1; cap <= capacity; cap++)
+            {
+                int maxValWithoutCurr = mat[item - 1, cap];
+                int maxValWithCurr = 0;
 
+                int weightOfCurr = weights[item - 1];
+                if (cap >= weightOfCurr)
+                {
+                    maxValWithCurr = scores[item - 1];
+                    int remainingCapacity = cap - weightOfCurr;
+                    maxValWithCurr += mat[item - 1, remainingCapacity];
+                }
+
+                mat[item, cap] = Math.Max(maxValWithoutCurr, maxValWithCurr);
+            }
         }
-        string outPut = string.Join(", ", indexOfItems);
-        Console.WriteLine(outPut);
+
+        Console.WriteLine(mat[n, capacity]);
     }
 }

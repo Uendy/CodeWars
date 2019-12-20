@@ -7,7 +7,7 @@
     <ProjectGuid>{9FC41359-C9BC-4E20-97FF-7D7B73E25432}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Packing_Your_Backpack</RootNamespace>
-    <AssemblyName>Packing_Your_Backpack</AssemblyName>
+    <AssemblyName>Packing Your Backpack</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
