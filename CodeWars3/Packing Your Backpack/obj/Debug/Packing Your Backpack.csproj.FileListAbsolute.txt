@@ -1,0 +1,7 @@
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Packing Your Backpack\bin\Debug\Packing Your Backpack.exe.config
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Packing Your Backpack\bin\Debug\Packing Your Backpack.exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Packing Your Backpack\bin\Debug\Packing Your Backpack.pdb
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Packing Your Backpack\obj\Debug\Packing Your Backpack.csprojAssemblyReference.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Packing Your Backpack\obj\Debug\Packing Your Backpack.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Packing Your Backpack\obj\Debug\Packing Your Backpack.exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Packing Your Backpack\obj\Debug\Packing Your Backpack.pdb
