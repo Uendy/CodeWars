@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meeting", "Meeting\Meeting.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packing Your Backpack", "Packing Your Backpack\Packing Your Backpack.csproj", "{9FC41359-C9BC-4E20-97FF-7D7B73E25432}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Last digit of a huge number", "Last digit of a huge number\Last digit of a huge number.csproj", "{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{9FC41359-C9BC-4E20-97FF-7D7B73E25432}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FC41359-C9BC-4E20-97FF-7D7B73E25432}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FC41359-C9BC-4E20-97FF-7D7B73E25432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

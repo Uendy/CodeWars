@@ -40,7 +40,7 @@ public class Program
         Console.WriteLine(lastDigit);
     }
 
-    public static BigInteger PowerByList(BigInteger bigNumber, List<BigInteger> input)
+    public static BigInteger PowerByList(BigInteger bigNumber, List<BigInteger> input) // do this with recursion
     {
         BigInteger lastNum = input[input.Count - 1];
         BigInteger secondLast = input[input.Count - 2];
