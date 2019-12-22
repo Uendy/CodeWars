@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
 public class Program
 {
     public static void Main()
@@ -22,32 +20,22 @@ public class Program
         //Corner cases: we assume that 0 ^ 0 = 1 and that lastDigit of an empty list equals to 1.
 
 
-        //What if I try with sb?
-        var input = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(BigInteger.Parse).ToList();
+        var array = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
-        var bigNumber = new BigInteger();
+        BigInteger t = 1;
+        var arr = array.Reverse().ToList();
 
-        while (input.Count() != 1)
+        foreach (var x in arr)
         {
-            bigNumber = PowerByList(bigNumber, input);
-            input.Remove(input.Count() - 1);
-            input.Remove(input.Count() - 2);
-
-            input.Add(bigNumber);
+            if (t < 4)
+                t = BigInteger.Pow(x, int.Parse(t.ToString()));
+            else
+            {
+                int exponent = int.Parse(BigInteger.ModPow(t, 1, 4).ToString()) + 4;
+                t = BigInteger.Pow(x, exponent);
+            }
         }
 
-        int lastDigit = int.Parse(input[0].ToString().ToCharArray().Last().ToString());
-        Console.WriteLine(lastDigit);
-    }
-
-    public static BigInteger PowerByList(BigInteger bigNumber, List<BigInteger> input) // do this with recursion
-    {
-        BigInteger lastNum = input[input.Count - 1];
-        BigInteger secondLast = input[input.Count - 2];
-
-
-        bigNumber = Math.Pow(secondLast, lastNum);
-
-        return bigNumber;
+        Console.WriteLine((int)BigInteger.ModPow(t, 1, 10));
     }
 }
