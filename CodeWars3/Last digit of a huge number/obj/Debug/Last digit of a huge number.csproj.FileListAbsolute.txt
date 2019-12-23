@@ -1,0 +1,7 @@
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Last digit of a huge number\bin\Debug\Last digit of a huge number.exe.config
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Last digit of a huge number\bin\Debug\Last digit of a huge number.exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Last digit of a huge number\bin\Debug\Last digit of a huge number.pdb
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Last digit of a huge number\obj\Debug\Last digit of a huge number.csprojAssemblyReference.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Last digit of a huge number\obj\Debug\Last digit of a huge number.csproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Last digit of a huge number\obj\Debug\Last digit of a huge number.exe
+C:\Users\Alexb\Desktop\Programming\CodeWars\CodeWars\CodeWars\CodeWars3\Last digit of a huge number\obj\Debug\Last digit of a huge number.pdb
