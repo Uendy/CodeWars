@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Packing Your Backpack", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Last digit of a huge number", "Last digit of a huge number\Last digit of a huge number.csproj", "{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prime Streaming", "Prime Streaming\Prime Streaming.csproj", "{720DE4D4-51D9-43CB-8D11-DDDE62A43871}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AE60882-72B3-45DC-85FE-FD5EA8BF78EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720DE4D4-51D9-43CB-8D11-DDDE62A43871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720DE4D4-51D9-43CB-8D11-DDDE62A43871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720DE4D4-51D9-43CB-8D11-DDDE62A43871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720DE4D4-51D9-43CB-8D11-DDDE62A43871}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

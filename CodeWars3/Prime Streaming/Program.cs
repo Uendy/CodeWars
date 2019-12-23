@@ -17,5 +17,40 @@ public class Program
         // 0, 10
         // 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
 
+        int startNum = int.Parse(Console.ReadLine());
+        if (startNum < 2) // two is the smallest non-negative prime number 
+        {
+            startNum = 2; 
+        }
+        int primesNeeded = int.Parse(Console.ReadLine());
+
+        var primes = new List<long>();
+
+        for (int index = startNum; primes.Count() != primesNeeded; index++)
+        {
+            bool isPrime = CheckPrime(index);
+            if (isPrime)
+            {
+                primes.Add(index);
+            }
+        }
+
+        var outPut = string.Join(", ", primes);
+        Console.WriteLine(outPut);
+
+    }
+
+    public static bool CheckPrime(int index)
+    {
+        bool isPrime = true;
+        for (int i = 2; i <= Math.Sqrt(index); i++)
+        {
+            if (index % i == 0)
+            {
+                isPrime = false;
+            }
+        }
+
+        return isPrime;
     }
 }
